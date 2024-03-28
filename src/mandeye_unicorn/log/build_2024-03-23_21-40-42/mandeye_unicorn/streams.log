@@ -1,0 +1,35 @@
+[0.202s] Invoking command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --build /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn -- -j16 -l16
+[0.253s] [  4%] Built target laszip_api
+[0.256s] [ 46%] Built target laszip
+[0.271s] [35m[1mConsolidate compiler generated dependencies of target mandeye_unicorn[0m
+[0.290s] [ 73%] Built target base_station_unicorn
+[0.305s] [100%] Built target mandeye_unicorn
+[0.317s] Invoked command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --build /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn -- -j16 -l16
+[0.398s] Invoking command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --install /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn
+[0.405s] -- Install configuration: "Release"
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/mandeye_unicorn
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/base_station_unicorn
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/package_run_dependencies/mandeye_unicorn
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/parent_prefix_path/mandeye_unicorn
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.sh
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.dsv
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.sh
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.dsv
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.bash
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.sh
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.zsh
+[0.406s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.dsv
+[0.407s] -- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.dsv
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/packages/mandeye_unicorn
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig.cmake
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig-version.cmake
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.xml
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8.0.6
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so
+[0.407s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8.0.6
+[0.408s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8
+[0.408s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so
+[0.408s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api.h
+[0.408s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api_version.h
+[0.409s] Invoked command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --install /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn

@@ -1,0 +1,29 @@
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kvoid project_gui(DemoOdometryParameters&)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:531:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  531 |             [01;35m[KImGui::Text(roll.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:533:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  533 |             [01;35m[KImGui::Text(pitch.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:535:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  535 |             [01;35m[KImGui::Text(yaw.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kbool exportLaz(const string&, const std::vector<Point3Di>&)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1296:75:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1296 | rintf(stderr, "DLL ERROR: setting coordinates for point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+      |                                                         [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+      |                                                             [01;35m[K|[m[K     [32m[K|[m[K
+      |                                                             [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+      |                                                         [32m[K%I64ld[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1309:59:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1309 |             fprintf(stderr, "DLL ERROR: writing point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+      |                                                       [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+      |                                                           [01;35m[K|[m[K     [32m[K|[m[K
+      |                                                           [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+      |                                                       [32m[K%I64ld[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1320:47:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1320 |     fprintf(stderr, "successfully written [01;35m[K%I64d[m[K points\n", [32m[Kp_count[m[K);
+      |                                           [01;35m[K~~~~^[m[K            [32m[K~~~~~~~[m[K
+      |                                               [01;35m[K|[m[K            [32m[K|[m[K
+      |                                               [01;35m[Kint[m[K          [32m[Klaszip_I64 {aka long int}[m[K
+      |                                           [32m[K%I64ld[m[K

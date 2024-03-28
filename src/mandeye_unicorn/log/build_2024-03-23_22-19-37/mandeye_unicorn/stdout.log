@@ -1,0 +1,6 @@
+[  4%] Built target laszip_api
+[ 46%] Built target laszip
+[ 48%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/mandeye_unicorn.cpp.o[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/base_station_unicorn.cpp.o[0m
+[ 53%] [32m[1mLinking CXX executable base_station_unicorn[0m
+[ 75%] Built target base_station_unicorn

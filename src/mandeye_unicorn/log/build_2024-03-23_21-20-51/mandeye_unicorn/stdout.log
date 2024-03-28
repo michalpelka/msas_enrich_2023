@@ -1,0 +1,170 @@
+-- The C compiler identification is Clang 14.0.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+-- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found visualization_msgs: 4.2.3 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found pcl_ros: 2.4.0 (/opt/ros/humble/share/pcl_ros/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Checking for module 'eigen3'
+--   Found eigen3, version 3.4.0
+-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- Checking for module 'flann'
+--   Found flann, version 1.9.1
+-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- Checking for module 'libusb-1.0'
+--   Found libusb-1.0, version 1.0.25
+-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+-- Found PCL_2D: /usr/include/pcl-1.12  
+-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+-- Found PCL_MODELER: /usr/include/pcl-1.12  
+-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- Checking for module 'glut'
+--   No package 'glut' found
+-- Found GLUT: /usr/lib/x86_64-linux-gnu/libglut.so  
+-- Looking for C++ include unordered_map
+-- Looking for C++ include unordered_map - found
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn
+[  2%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/integercompressor.cpp.o[0m
+[  6%] [32mBuilding C object src/3rd/LASzip/dll/CMakeFiles/laszip_api.dir/laszip_api.c.o[0m
+[  6%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/arithmeticdecoder.cpp.o[0m
+[  8%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/arithmeticmodel.cpp.o[0m
+[ 10%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasindex.cpp.o[0m
+[ 14%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/arithmeticencoder.cpp.o[0m
+[ 14%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasinterval.cpp.o[0m
+[ 16%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasreaditemcompressed_v2.cpp.o[0m
+[ 18%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasreaditemcompressed_v3.cpp.o[0m
+[ 22%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasquadtree.cpp.o[0m
+[ 22%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasreaditemcompressed_v1.cpp.o[0m
+[ 24%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasreaditemcompressed_v4.cpp.o[0m
+[ 26%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/lasreadpoint.cpp.o[0m
+[ 28%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/laswriteitemcompressed_v1.cpp.o[0m
+[ 30%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/laswriteitemcompressed_v2.cpp.o[0m
+[ 32%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/laswriteitemcompressed_v3.cpp.o[0m
+[ 34%] [32m[1mLinking C shared library ../lib/liblaszip_api.so[0m
+[ 36%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/laswriteitemcompressed_v4.cpp.o[0m
+[ 38%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/laswritepoint.cpp.o[0m
+[ 40%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/laszip.cpp.o[0m
+[ 42%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/laszip_dll.cpp.o[0m
+[ 44%] [32mBuilding CXX object src/3rd/LASzip/src/CMakeFiles/laszip.dir/mydefs.cpp.o[0m
+[ 44%] Built target laszip_api
+[ 46%] [32m[1mLinking CXX shared library ../lib/liblaszip.so[0m
+[ 46%] Built target laszip
+[ 55%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/mandeye_unicorn.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/imgui/imgui.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/imgui/imgui_demo.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/imgui/imgui.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/imgui/imgui_demo.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/base_station_unicorn.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/imgui/imgui_draw.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/imgui/imgui_draw.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/imgui/imgui_widgets.cpp.o[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/imgui/imgui_widgets.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/imgui/imgui_tables.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/imgui/backends/imgui_impl_glut.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/imgui/backends/imgui_impl_glut.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/imgui/backends/imgui_impl_opengl2.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/imgui/backends/imgui_impl_opengl2.cpp.o[0m
+[ 79%] [32mBuilding C object CMakeFiles/base_station_unicorn.dir/src/3rd/Fusion/Fusion/FusionAhrs.c.o[0m
+[ 81%] [32mBuilding C object CMakeFiles/base_station_unicorn.dir/src/3rd/Fusion/Fusion/FusionCompass.c.o[0m
+[ 83%] [32mBuilding C object CMakeFiles/base_station_unicorn.dir/src/3rd/Fusion/Fusion/FusionOffset.c.o[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/imgui/imgui_tables.cpp.o[0m
+[ 87%] [32mBuilding CXX object CMakeFiles/base_station_unicorn.dir/src/3rd/ImGuizmo/ImGuizmo.cpp.o[0m
+[ 89%] [32mBuilding C object CMakeFiles/mandeye_unicorn.dir/src/3rd/Fusion/Fusion/FusionAhrs.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/mandeye_unicorn.dir/src/3rd/Fusion/Fusion/FusionCompass.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/mandeye_unicorn.dir/src/3rd/Fusion/Fusion/FusionOffset.c.o[0m
+[ 95%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/3rd/ImGuizmo/ImGuizmo.cpp.o[0m
+[ 97%] [32m[1mLinking CXX executable base_station_unicorn[0m
+[ 97%] Built target base_station_unicorn
+[100%] [32m[1mLinking CXX executable mandeye_unicorn[0m
+[100%] Built target mandeye_unicorn
+-- Install configuration: ""
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/mandeye_unicorn
+-- Set runtime path of "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/mandeye_unicorn" to ""
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/base_station_unicorn
+-- Set runtime path of "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/base_station_unicorn" to ""
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/package_run_dependencies/mandeye_unicorn
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/parent_prefix_path/mandeye_unicorn
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.sh
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.dsv
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.sh
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.dsv
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.bash
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.sh
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.zsh
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.dsv
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.dsv
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/packages/mandeye_unicorn
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig.cmake
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig-version.cmake
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.xml
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8.0.6
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8
+-- Set runtime path of "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8.0.6" to "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib"
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8.0.6
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8
+-- Set runtime path of "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8.0.6" to "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib"
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api.h
+-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api_version.h

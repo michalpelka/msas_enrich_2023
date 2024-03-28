@@ -1,0 +1,502 @@
+[0.000000] (-) TimerEvent: {}
+[0.000313] (mandeye_unicorn) JobQueued: {'identifier': 'mandeye_unicorn', 'dependencies': OrderedDict()}
+[0.000601] (mandeye_unicorn) JobStarted: {'identifier': 'mandeye_unicorn'}
+[0.099717] (-) TimerEvent: {}
+[0.201709] (-) TimerEvent: {}
+[0.259544] (mandeye_unicorn) JobProgress: {'identifier': 'mandeye_unicorn', 'progress': 'cmake'}
+[0.260556] (mandeye_unicorn) JobProgress: {'identifier': 'mandeye_unicorn', 'progress': 'build'}
+[0.261544] (mandeye_unicorn) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn', '--', '-j16', '-l16'], 'cwd': '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'michal'), ('LC_TIME', 'en_IL.UTF-8'), ('ROS_PACKAGE_PATH', '/home/michal/colcon_ws/install/mandeye_to_rosbag2/share'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib:/home/michal/SmartMicroWs/install/livox_ros_driver2/lib:/home/michal/SmartMicroWs/install/kiss_icp/lib:/home/michal/radar_ws/install/livox_ros_driver2/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/rviz_marker_tools/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs/lib:/home/michal/colcon_ws/install/reach_roscon_2023/lib:/home/michal/colcon_ws/install/arri_description/lib:/home/michal/colcon_ws/install/LASZIP/lib:/home/michal/ws_moveit2/install/ur_robot_driver/lib:/home/michal/ws_moveit2/install/ur_controllers/lib:/home/michal/ws_moveit2/install/ur_dashboard_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/michal'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_IL.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3691'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2967a8d943ab42f9879d492765ff1d10'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install:/home/michal/SmartMicroWs/install:/home/michal/radar_ws/install:/home/michal/github/ROSCon2023Demo/ros2_ws/install:/home/michal/colcon_ws/install:/home/michal/github/ROSConDemo/kraken_nav/install:/home/michal/ws_moveit2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'michal'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/michal/colcon_ws/install/mandeye_to_rosbag2/lib/x86_64-linux-gnu/pkgconfig:/home/michal/colcon_ws/install/mandeye_to_rosbag2/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'michal'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/michal/ws_moveit2/install/ur_robot_driver/bin:/home/michal/.cargo/bin:/opt/ros/humble/bin:/home/michal/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/michal/clion-2022.2.1/bin/:/home/michal/blender-3.2.2-linux-x64/:/home/michal/clang-format-all/'), ('SESSION_MANAGER', 'local/michal-AORUS-15P-XD:@/tmp/.ICE-unix/3691,unix/michal-AORUS-15P-XD:/tmp/.ICE-unix/3691'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_IL.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/07b29436_7abf_4af5_b341_71ac80e98a62'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_IL.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.213'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/SmartMicroWs/install/radar:/home/michal/SmartMicroWs/install/livox_ros_driver2:/home/michal/SmartMicroWs/install/kiss_icp:/home/michal/radar_ws/install/livox_ros_driver2:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_palletization:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_moveit_config:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/rviz_marker_tools:/home/michal/github/ROSCon2023Demo/ros2_ws/install/roscon2023_demo:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_deliberation:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto600_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto1500_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/global_path_lock:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs:/home/michal/colcon_ws/install/reach_roscon_2023:/home/michal/colcon_ws/install/dfr0592_driver:/home/michal/colcon_ws/install/arri_description:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/home/michal/ws_moveit2/install/ur:/home/michal/ws_moveit2/install/ur_calibration:/home/michal/ws_moveit2/install/ur_robot_driver:/home/michal/ws_moveit2/install/ur_moveit_config:/home/michal/ws_moveit2/install/ur_bringup:/home/michal/ws_moveit2/install/ur_description:/home/michal/ws_moveit2/install/ur_controllers:/home/michal/ws_moveit2/install/ur_dashboard_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_IL.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('CXX', '/usr/bin/c++'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_IL.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'en_IL.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2967a8d943ab42f9879d492765ff1d10'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/michal/SmartMicroWs/install/radar_bringup/lib/python3.10/site-packages:/home/michal/SmartMicroWs/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/michal/radar_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_moveit_config/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav/lib/python3.10/site-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration/lib/python3.10/site-packages:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav/lib/python3.10/site-packages:/home/michal/ws_moveit2/install/ur_robot_driver/local/lib/python3.10/dist-packages:/home/michal/ws_moveit2/install/ur_moveit_config/local/lib/python3.10/dist-packages:/home/michal/ws_moveit2/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_IL.UTF-8'), ('LC_PAPER', 'en_IL.UTF-8'), ('CC', '/usr/bin/cc'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn:/home/michal/SmartMicroWs/install/radar:/home/michal/SmartMicroWs/install/livox_ros_driver2:/home/michal/SmartMicroWs/install/kiss_icp:/home/michal/radar_ws/install/livox_ros_driver2:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_palletization:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_moveit_config:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/rviz_marker_tools:/home/michal/github/ROSCon2023Demo/ros2_ws/install/roscon2023_demo:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_deliberation:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto600_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto1500_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/global_path_lock:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs:/home/michal/colcon_ws/install/reach_roscon_2023:/home/michal/colcon_ws/install/dfr0592_driver:/home/michal/colcon_ws/install/arri_description:/home/michal/ws_moveit2/install/ur:/home/michal/ws_moveit2/install/ur_calibration:/home/michal/ws_moveit2/install/ur_robot_driver:/home/michal/ws_moveit2/install/ur_moveit_config:/home/michal/ws_moveit2/install/ur_bringup:/home/michal/ws_moveit2/install/ur_description:/home/michal/ws_moveit2/install/ur_controllers:/home/michal/ws_moveit2/install/ur_dashboard_msgs:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble')]), 'shell': False}
+[0.301843] (-) TimerEvent: {}
+[0.341573] (mandeye_unicorn) StdoutLine: {'line': b'[  4%] Built target laszip_api\n'}
+[0.344739] (mandeye_unicorn) StdoutLine: {'line': b'[ 46%] Built target laszip\n'}
+[0.370462] (mandeye_unicorn) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target mandeye_unicorn\x1b[0m\n'}
+[0.400883] (mandeye_unicorn) StdoutLine: {'line': b'[ 73%] Built target base_station_unicorn\n'}
+[0.401889] (-) TimerEvent: {}
+[0.415429] (mandeye_unicorn) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/mandeye_unicorn.cpp.o\x1b[0m\n'}
+[0.502053] (-) TimerEvent: {}
+[0.602402] (-) TimerEvent: {}
+[0.702818] (-) TimerEvent: {}
+[0.803170] (-) TimerEvent: {}
+[0.903532] (-) TimerEvent: {}
+[1.003876] (-) TimerEvent: {}
+[1.104225] (-) TimerEvent: {}
+[1.204527] (-) TimerEvent: {}
+[1.304892] (-) TimerEvent: {}
+[1.405234] (-) TimerEvent: {}
+[1.505565] (-) TimerEvent: {}
+[1.605899] (-) TimerEvent: {}
+[1.706241] (-) TimerEvent: {}
+[1.806613] (-) TimerEvent: {}
+[1.906930] (-) TimerEvent: {}
+[2.007248] (-) TimerEvent: {}
+[2.107552] (-) TimerEvent: {}
+[2.207904] (-) TimerEvent: {}
+[2.308186] (-) TimerEvent: {}
+[2.408461] (-) TimerEvent: {}
+[2.508756] (-) TimerEvent: {}
+[2.609230] (-) TimerEvent: {}
+[2.709561] (-) TimerEvent: {}
+[2.809899] (-) TimerEvent: {}
+[2.910237] (-) TimerEvent: {}
+[3.010551] (-) TimerEvent: {}
+[3.110884] (-) TimerEvent: {}
+[3.211189] (-) TimerEvent: {}
+[3.311546] (-) TimerEvent: {}
+[3.411894] (-) TimerEvent: {}
+[3.512225] (-) TimerEvent: {}
+[3.612540] (-) TimerEvent: {}
+[3.712854] (-) TimerEvent: {}
+[3.813182] (-) TimerEvent: {}
+[3.913561] (-) TimerEvent: {}
+[4.013897] (-) TimerEvent: {}
+[4.114200] (-) TimerEvent: {}
+[4.214529] (-) TimerEvent: {}
+[4.314861] (-) TimerEvent: {}
+[4.415237] (-) TimerEvent: {}
+[4.515553] (-) TimerEvent: {}
+[4.615834] (-) TimerEvent: {}
+[4.716171] (-) TimerEvent: {}
+[4.816431] (-) TimerEvent: {}
+[4.916712] (-) TimerEvent: {}
+[5.017006] (-) TimerEvent: {}
+[5.117315] (-) TimerEvent: {}
+[5.217636] (-) TimerEvent: {}
+[5.317928] (-) TimerEvent: {}
+[5.418212] (-) TimerEvent: {}
+[5.518484] (-) TimerEvent: {}
+[5.618776] (-) TimerEvent: {}
+[5.719093] (-) TimerEvent: {}
+[5.819444] (-) TimerEvent: {}
+[5.919780] (-) TimerEvent: {}
+[6.020088] (-) TimerEvent: {}
+[6.120379] (-) TimerEvent: {}
+[6.220673] (-) TimerEvent: {}
+[6.320934] (-) TimerEvent: {}
+[6.421235] (-) TimerEvent: {}
+[6.485410] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid project_gui(DemoOdometryParameters&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.485687] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:531:24:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat not a string literal and no format arguments [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security\x07-Wformat-security\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.485752] (mandeye_unicorn) StderrLine: {'line': b'  531 |             \x1b[01;35m\x1b[KImGui::Text(roll.c_str())\x1b[m\x1b[K;\n'}
+[6.485803] (mandeye_unicorn) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.485851] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:533:24:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat not a string literal and no format arguments [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security\x07-Wformat-security\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.485907] (mandeye_unicorn) StderrLine: {'line': b'  533 |             \x1b[01;35m\x1b[KImGui::Text(pitch.c_str())\x1b[m\x1b[K;\n'}
+[6.485955] (mandeye_unicorn) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.486001] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:535:24:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat not a string literal and no format arguments [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security\x07-Wformat-security\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.486048] (mandeye_unicorn) StderrLine: {'line': b'  535 |             \x1b[01;35m\x1b[KImGui::Text(yaw.c_str())\x1b[m\x1b[K;\n'}
+[6.486099] (mandeye_unicorn) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K~~~~~~~~~~~^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.521345] (-) TimerEvent: {}
+[6.621643] (-) TimerEvent: {}
+[6.721983] (-) TimerEvent: {}
+[6.821304] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kbool exportLaz(const string&, const std::vector<Point3Di>&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.821518] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1296:75:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%d\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99, but argument 3 has type \xe2\x80\x98\x1b[01m\x1b[Klaszip_I64\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.821577] (mandeye_unicorn) StderrLine: {'line': b' 1296 | rintf(stderr, "DLL ERROR: setting coordinates for point \x1b[01;35m\x1b[K%I64d\x1b[m\x1b[K\\n", \x1b[32m\x1b[Kp_count\x1b[m\x1b[K);\n'}
+[6.821626] (mandeye_unicorn) StderrLine: {'line': b'      |                                                         \x1b[01;35m\x1b[K~~~~^\x1b[m\x1b[K     \x1b[32m\x1b[K~~~~~~~\x1b[m\x1b[K\n'}
+[6.821672] (mandeye_unicorn) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[K|\x1b[m\x1b[K     \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[6.821718] (mandeye_unicorn) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[Kint\x1b[m\x1b[K   \x1b[32m\x1b[Klaszip_I64 {aka long int}\x1b[m\x1b[K\n'}
+[6.821763] (mandeye_unicorn) StderrLine: {'line': b'      |                                                         \x1b[32m\x1b[K%I64ld\x1b[m\x1b[K\n'}
+[6.821814] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1309:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%d\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99, but argument 3 has type \xe2\x80\x98\x1b[01m\x1b[Klaszip_I64\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.821871] (mandeye_unicorn) StderrLine: {'line': b' 1309 |             fprintf(stderr, "DLL ERROR: writing point \x1b[01;35m\x1b[K%I64d\x1b[m\x1b[K\\n", \x1b[32m\x1b[Kp_count\x1b[m\x1b[K);\n'}
+[6.821930] (mandeye_unicorn) StderrLine: {'line': b'      |                                                       \x1b[01;35m\x1b[K~~~~^\x1b[m\x1b[K     \x1b[32m\x1b[K~~~~~~~\x1b[m\x1b[K\n'}
+[6.821973] (-) TimerEvent: {}
+[6.822073] (mandeye_unicorn) StderrLine: {'line': b'      |                                                           \x1b[01;35m\x1b[K|\x1b[m\x1b[K     \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[6.822141] (mandeye_unicorn) StderrLine: {'line': b'      |                                                           \x1b[01;35m\x1b[Kint\x1b[m\x1b[K   \x1b[32m\x1b[Klaszip_I64 {aka long int}\x1b[m\x1b[K\n'}
+[6.822189] (mandeye_unicorn) StderrLine: {'line': b'      |                                                       \x1b[32m\x1b[K%I64ld\x1b[m\x1b[K\n'}
+[6.822233] (mandeye_unicorn) StderrLine: {'line': b'\x1b[01m\x1b[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1320:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%d\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99, but argument 3 has type \xe2\x80\x98\x1b[01m\x1b[Klaszip_I64\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.822287] (mandeye_unicorn) StderrLine: {'line': b' 1320 |     fprintf(stderr, "successfully written \x1b[01;35m\x1b[K%I64d\x1b[m\x1b[K points\\n", \x1b[32m\x1b[Kp_count\x1b[m\x1b[K);\n'}
+[6.822348] (mandeye_unicorn) StderrLine: {'line': b'      |                                           \x1b[01;35m\x1b[K~~~~^\x1b[m\x1b[K            \x1b[32m\x1b[K~~~~~~~\x1b[m\x1b[K\n'}
+[6.822429] (mandeye_unicorn) StderrLine: {'line': b'      |                                               \x1b[01;35m\x1b[K|\x1b[m\x1b[K            \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[6.822474] (mandeye_unicorn) StderrLine: {'line': b'      |                                               \x1b[01;35m\x1b[Kint\x1b[m\x1b[K          \x1b[32m\x1b[Klaszip_I64 {aka long int}\x1b[m\x1b[K\n'}
+[6.822518] (mandeye_unicorn) StderrLine: {'line': b'      |                                           \x1b[32m\x1b[K%I64ld\x1b[m\x1b[K\n'}
+[6.922131] (-) TimerEvent: {}
+[7.022453] (-) TimerEvent: {}
+[7.122788] (-) TimerEvent: {}
+[7.223129] (-) TimerEvent: {}
+[7.323470] (-) TimerEvent: {}
+[7.423772] (-) TimerEvent: {}
+[7.524083] (-) TimerEvent: {}
+[7.624373] (-) TimerEvent: {}
+[7.724672] (-) TimerEvent: {}
+[7.824940] (-) TimerEvent: {}
+[7.925290] (-) TimerEvent: {}
+[8.025627] (-) TimerEvent: {}
+[8.125964] (-) TimerEvent: {}
+[8.226346] (-) TimerEvent: {}
+[8.326678] (-) TimerEvent: {}
+[8.427025] (-) TimerEvent: {}
+[8.527362] (-) TimerEvent: {}
+[8.627701] (-) TimerEvent: {}
+[8.728044] (-) TimerEvent: {}
+[8.828337] (-) TimerEvent: {}
+[8.928626] (-) TimerEvent: {}
+[9.028917] (-) TimerEvent: {}
+[9.129220] (-) TimerEvent: {}
+[9.229522] (-) TimerEvent: {}
+[9.329813] (-) TimerEvent: {}
+[9.430176] (-) TimerEvent: {}
+[9.530520] (-) TimerEvent: {}
+[9.630823] (-) TimerEvent: {}
+[9.731148] (-) TimerEvent: {}
+[9.831480] (-) TimerEvent: {}
+[9.931785] (-) TimerEvent: {}
+[10.032089] (-) TimerEvent: {}
+[10.132370] (-) TimerEvent: {}
+[10.232670] (-) TimerEvent: {}
+[10.332990] (-) TimerEvent: {}
+[10.433336] (-) TimerEvent: {}
+[10.533642] (-) TimerEvent: {}
+[10.633974] (-) TimerEvent: {}
+[10.734301] (-) TimerEvent: {}
+[10.834609] (-) TimerEvent: {}
+[10.934960] (-) TimerEvent: {}
+[11.035279] (-) TimerEvent: {}
+[11.135628] (-) TimerEvent: {}
+[11.236058] (-) TimerEvent: {}
+[11.336369] (-) TimerEvent: {}
+[11.436669] (-) TimerEvent: {}
+[11.536985] (-) TimerEvent: {}
+[11.637333] (-) TimerEvent: {}
+[11.737693] (-) TimerEvent: {}
+[11.838067] (-) TimerEvent: {}
+[11.938435] (-) TimerEvent: {}
+[12.038779] (-) TimerEvent: {}
+[12.139064] (-) TimerEvent: {}
+[12.239409] (-) TimerEvent: {}
+[12.339775] (-) TimerEvent: {}
+[12.440125] (-) TimerEvent: {}
+[12.540410] (-) TimerEvent: {}
+[12.640680] (-) TimerEvent: {}
+[12.740961] (-) TimerEvent: {}
+[12.841255] (-) TimerEvent: {}
+[12.941530] (-) TimerEvent: {}
+[13.041878] (-) TimerEvent: {}
+[13.142224] (-) TimerEvent: {}
+[13.242599] (-) TimerEvent: {}
+[13.342918] (-) TimerEvent: {}
+[13.443301] (-) TimerEvent: {}
+[13.543646] (-) TimerEvent: {}
+[13.643990] (-) TimerEvent: {}
+[13.744318] (-) TimerEvent: {}
+[13.844631] (-) TimerEvent: {}
+[13.944951] (-) TimerEvent: {}
+[14.045303] (-) TimerEvent: {}
+[14.145636] (-) TimerEvent: {}
+[14.246019] (-) TimerEvent: {}
+[14.346392] (-) TimerEvent: {}
+[14.446748] (-) TimerEvent: {}
+[14.547091] (-) TimerEvent: {}
+[14.647366] (-) TimerEvent: {}
+[14.747683] (-) TimerEvent: {}
+[14.848157] (-) TimerEvent: {}
+[14.948452] (-) TimerEvent: {}
+[15.048735] (-) TimerEvent: {}
+[15.149045] (-) TimerEvent: {}
+[15.249328] (-) TimerEvent: {}
+[15.349633] (-) TimerEvent: {}
+[15.449971] (-) TimerEvent: {}
+[15.550349] (-) TimerEvent: {}
+[15.650709] (-) TimerEvent: {}
+[15.751042] (-) TimerEvent: {}
+[15.851424] (-) TimerEvent: {}
+[15.951758] (-) TimerEvent: {}
+[16.052127] (-) TimerEvent: {}
+[16.152447] (-) TimerEvent: {}
+[16.252770] (-) TimerEvent: {}
+[16.353147] (-) TimerEvent: {}
+[16.453464] (-) TimerEvent: {}
+[16.553769] (-) TimerEvent: {}
+[16.654187] (-) TimerEvent: {}
+[16.754533] (-) TimerEvent: {}
+[16.854870] (-) TimerEvent: {}
+[16.955200] (-) TimerEvent: {}
+[17.055514] (-) TimerEvent: {}
+[17.155847] (-) TimerEvent: {}
+[17.256163] (-) TimerEvent: {}
+[17.356445] (-) TimerEvent: {}
+[17.456761] (-) TimerEvent: {}
+[17.557066] (-) TimerEvent: {}
+[17.657372] (-) TimerEvent: {}
+[17.757704] (-) TimerEvent: {}
+[17.858074] (-) TimerEvent: {}
+[17.958415] (-) TimerEvent: {}
+[18.058739] (-) TimerEvent: {}
+[18.159057] (-) TimerEvent: {}
+[18.259377] (-) TimerEvent: {}
+[18.359710] (-) TimerEvent: {}
+[18.460026] (-) TimerEvent: {}
+[18.560349] (-) TimerEvent: {}
+[18.660691] (-) TimerEvent: {}
+[18.761049] (-) TimerEvent: {}
+[18.861356] (-) TimerEvent: {}
+[18.961677] (-) TimerEvent: {}
+[19.062059] (-) TimerEvent: {}
+[19.162389] (-) TimerEvent: {}
+[19.262717] (-) TimerEvent: {}
+[19.363008] (-) TimerEvent: {}
+[19.463329] (-) TimerEvent: {}
+[19.563641] (-) TimerEvent: {}
+[19.663943] (-) TimerEvent: {}
+[19.764296] (-) TimerEvent: {}
+[19.864600] (-) TimerEvent: {}
+[19.964954] (-) TimerEvent: {}
+[20.065256] (-) TimerEvent: {}
+[20.165627] (-) TimerEvent: {}
+[20.266050] (-) TimerEvent: {}
+[20.366402] (-) TimerEvent: {}
+[20.466750] (-) TimerEvent: {}
+[20.567064] (-) TimerEvent: {}
+[20.667374] (-) TimerEvent: {}
+[20.767708] (-) TimerEvent: {}
+[20.868012] (-) TimerEvent: {}
+[20.968347] (-) TimerEvent: {}
+[21.068712] (-) TimerEvent: {}
+[21.169074] (-) TimerEvent: {}
+[21.269453] (-) TimerEvent: {}
+[21.369790] (-) TimerEvent: {}
+[21.470124] (-) TimerEvent: {}
+[21.570441] (-) TimerEvent: {}
+[21.670831] (-) TimerEvent: {}
+[21.771179] (-) TimerEvent: {}
+[21.871549] (-) TimerEvent: {}
+[21.971870] (-) TimerEvent: {}
+[22.072200] (-) TimerEvent: {}
+[22.172534] (-) TimerEvent: {}
+[22.272912] (-) TimerEvent: {}
+[22.373241] (-) TimerEvent: {}
+[22.473565] (-) TimerEvent: {}
+[22.573902] (-) TimerEvent: {}
+[22.674217] (-) TimerEvent: {}
+[22.774569] (-) TimerEvent: {}
+[22.874963] (-) TimerEvent: {}
+[22.975338] (-) TimerEvent: {}
+[23.075681] (-) TimerEvent: {}
+[23.176035] (-) TimerEvent: {}
+[23.276334] (-) TimerEvent: {}
+[23.376696] (-) TimerEvent: {}
+[23.477007] (-) TimerEvent: {}
+[23.577330] (-) TimerEvent: {}
+[23.677714] (-) TimerEvent: {}
+[23.778051] (-) TimerEvent: {}
+[23.878364] (-) TimerEvent: {}
+[23.978701] (-) TimerEvent: {}
+[24.079023] (-) TimerEvent: {}
+[24.179383] (-) TimerEvent: {}
+[24.279746] (-) TimerEvent: {}
+[24.380082] (-) TimerEvent: {}
+[24.480365] (-) TimerEvent: {}
+[24.580649] (-) TimerEvent: {}
+[24.680988] (-) TimerEvent: {}
+[24.781299] (-) TimerEvent: {}
+[24.881610] (-) TimerEvent: {}
+[24.981936] (-) TimerEvent: {}
+[25.082268] (-) TimerEvent: {}
+[25.182622] (-) TimerEvent: {}
+[25.282944] (-) TimerEvent: {}
+[25.383281] (-) TimerEvent: {}
+[25.483591] (-) TimerEvent: {}
+[25.583910] (-) TimerEvent: {}
+[25.684187] (-) TimerEvent: {}
+[25.784487] (-) TimerEvent: {}
+[25.884759] (-) TimerEvent: {}
+[25.985055] (-) TimerEvent: {}
+[26.085387] (-) TimerEvent: {}
+[26.185800] (-) TimerEvent: {}
+[26.286151] (-) TimerEvent: {}
+[26.386470] (-) TimerEvent: {}
+[26.486807] (-) TimerEvent: {}
+[26.587200] (-) TimerEvent: {}
+[26.687581] (-) TimerEvent: {}
+[26.787973] (-) TimerEvent: {}
+[26.888359] (-) TimerEvent: {}
+[26.988728] (-) TimerEvent: {}
+[27.089038] (-) TimerEvent: {}
+[27.189370] (-) TimerEvent: {}
+[27.289713] (-) TimerEvent: {}
+[27.390027] (-) TimerEvent: {}
+[27.490361] (-) TimerEvent: {}
+[27.590685] (-) TimerEvent: {}
+[27.690999] (-) TimerEvent: {}
+[27.791380] (-) TimerEvent: {}
+[27.891730] (-) TimerEvent: {}
+[27.992069] (-) TimerEvent: {}
+[28.092366] (-) TimerEvent: {}
+[28.192663] (-) TimerEvent: {}
+[28.292969] (-) TimerEvent: {}
+[28.393271] (-) TimerEvent: {}
+[28.493612] (-) TimerEvent: {}
+[28.593947] (-) TimerEvent: {}
+[28.694285] (-) TimerEvent: {}
+[28.794611] (-) TimerEvent: {}
+[28.894922] (-) TimerEvent: {}
+[28.995230] (-) TimerEvent: {}
+[29.095562] (-) TimerEvent: {}
+[29.195861] (-) TimerEvent: {}
+[29.296180] (-) TimerEvent: {}
+[29.396488] (-) TimerEvent: {}
+[29.496772] (-) TimerEvent: {}
+[29.597071] (-) TimerEvent: {}
+[29.697379] (-) TimerEvent: {}
+[29.797699] (-) TimerEvent: {}
+[29.898015] (-) TimerEvent: {}
+[29.998362] (-) TimerEvent: {}
+[30.098728] (-) TimerEvent: {}
+[30.199057] (-) TimerEvent: {}
+[30.299408] (-) TimerEvent: {}
+[30.399731] (-) TimerEvent: {}
+[30.500070] (-) TimerEvent: {}
+[30.600380] (-) TimerEvent: {}
+[30.700713] (-) TimerEvent: {}
+[30.801000] (-) TimerEvent: {}
+[30.901329] (-) TimerEvent: {}
+[31.001659] (-) TimerEvent: {}
+[31.102075] (-) TimerEvent: {}
+[31.202435] (-) TimerEvent: {}
+[31.302771] (-) TimerEvent: {}
+[31.403159] (-) TimerEvent: {}
+[31.503542] (-) TimerEvent: {}
+[31.603946] (-) TimerEvent: {}
+[31.704337] (-) TimerEvent: {}
+[31.804785] (-) TimerEvent: {}
+[31.905250] (-) TimerEvent: {}
+[32.005668] (-) TimerEvent: {}
+[32.106180] (-) TimerEvent: {}
+[32.206644] (-) TimerEvent: {}
+[32.307089] (-) TimerEvent: {}
+[32.407526] (-) TimerEvent: {}
+[32.507918] (-) TimerEvent: {}
+[32.608257] (-) TimerEvent: {}
+[32.708542] (-) TimerEvent: {}
+[32.808845] (-) TimerEvent: {}
+[32.909148] (-) TimerEvent: {}
+[33.009475] (-) TimerEvent: {}
+[33.109830] (-) TimerEvent: {}
+[33.210208] (-) TimerEvent: {}
+[33.310580] (-) TimerEvent: {}
+[33.410945] (-) TimerEvent: {}
+[33.511324] (-) TimerEvent: {}
+[33.611686] (-) TimerEvent: {}
+[33.712059] (-) TimerEvent: {}
+[33.812391] (-) TimerEvent: {}
+[33.912680] (-) TimerEvent: {}
+[34.013022] (-) TimerEvent: {}
+[34.113321] (-) TimerEvent: {}
+[34.213638] (-) TimerEvent: {}
+[34.313987] (-) TimerEvent: {}
+[34.414308] (-) TimerEvent: {}
+[34.514626] (-) TimerEvent: {}
+[34.614983] (-) TimerEvent: {}
+[34.715358] (-) TimerEvent: {}
+[34.815704] (-) TimerEvent: {}
+[34.916132] (-) TimerEvent: {}
+[35.016478] (-) TimerEvent: {}
+[35.116784] (-) TimerEvent: {}
+[35.217150] (-) TimerEvent: {}
+[35.317636] (-) TimerEvent: {}
+[35.417959] (-) TimerEvent: {}
+[35.518501] (-) TimerEvent: {}
+[35.618863] (-) TimerEvent: {}
+[35.719182] (-) TimerEvent: {}
+[35.819459] (-) TimerEvent: {}
+[35.919777] (-) TimerEvent: {}
+[36.020192] (-) TimerEvent: {}
+[36.120620] (-) TimerEvent: {}
+[36.221022] (-) TimerEvent: {}
+[36.321434] (-) TimerEvent: {}
+[36.421884] (-) TimerEvent: {}
+[36.522305] (-) TimerEvent: {}
+[36.622624] (-) TimerEvent: {}
+[36.722953] (-) TimerEvent: {}
+[36.823275] (-) TimerEvent: {}
+[36.923640] (-) TimerEvent: {}
+[37.023941] (-) TimerEvent: {}
+[37.124307] (-) TimerEvent: {}
+[37.224666] (-) TimerEvent: {}
+[37.324956] (-) TimerEvent: {}
+[37.425290] (-) TimerEvent: {}
+[37.525631] (-) TimerEvent: {}
+[37.625958] (-) TimerEvent: {}
+[37.726270] (-) TimerEvent: {}
+[37.826560] (-) TimerEvent: {}
+[37.926861] (-) TimerEvent: {}
+[38.027197] (-) TimerEvent: {}
+[38.127569] (-) TimerEvent: {}
+[38.227865] (-) TimerEvent: {}
+[38.328198] (-) TimerEvent: {}
+[38.428516] (-) TimerEvent: {}
+[38.528825] (-) TimerEvent: {}
+[38.629121] (-) TimerEvent: {}
+[38.729408] (-) TimerEvent: {}
+[38.829716] (-) TimerEvent: {}
+[38.930037] (-) TimerEvent: {}
+[39.030364] (-) TimerEvent: {}
+[39.130694] (-) TimerEvent: {}
+[39.231008] (-) TimerEvent: {}
+[39.331277] (-) TimerEvent: {}
+[39.431557] (-) TimerEvent: {}
+[39.531830] (-) TimerEvent: {}
+[39.632157] (-) TimerEvent: {}
+[39.732455] (-) TimerEvent: {}
+[39.832718] (-) TimerEvent: {}
+[39.932996] (-) TimerEvent: {}
+[40.033290] (-) TimerEvent: {}
+[40.133557] (-) TimerEvent: {}
+[40.233853] (-) TimerEvent: {}
+[40.334161] (-) TimerEvent: {}
+[40.434474] (-) TimerEvent: {}
+[40.534749] (-) TimerEvent: {}
+[40.635057] (-) TimerEvent: {}
+[40.735378] (-) TimerEvent: {}
+[40.835707] (-) TimerEvent: {}
+[40.936012] (-) TimerEvent: {}
+[41.036347] (-) TimerEvent: {}
+[41.098617] (mandeye_unicorn) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX executable mandeye_unicorn\x1b[0m\n'}
+[41.136447] (-) TimerEvent: {}
+[41.236754] (-) TimerEvent: {}
+[41.337069] (-) TimerEvent: {}
+[41.437388] (-) TimerEvent: {}
+[41.537744] (-) TimerEvent: {}
+[41.638098] (-) TimerEvent: {}
+[41.738415] (-) TimerEvent: {}
+[41.838721] (-) TimerEvent: {}
+[41.939015] (-) TimerEvent: {}
+[42.039306] (-) TimerEvent: {}
+[42.139602] (-) TimerEvent: {}
+[42.239911] (-) TimerEvent: {}
+[42.340241] (-) TimerEvent: {}
+[42.419926] (mandeye_unicorn) StdoutLine: {'line': b'[100%] Built target mandeye_unicorn\n'}
+[42.431436] (mandeye_unicorn) CommandEnded: {'returncode': 0}
+[42.440313] (-) TimerEvent: {}
+[42.505624] (mandeye_unicorn) JobProgress: {'identifier': 'mandeye_unicorn', 'progress': 'install'}
+[42.514395] (mandeye_unicorn) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn'], 'cwd': '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'michal'), ('LC_TIME', 'en_IL.UTF-8'), ('ROS_PACKAGE_PATH', '/home/michal/colcon_ws/install/mandeye_to_rosbag2/share'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib:/home/michal/SmartMicroWs/install/livox_ros_driver2/lib:/home/michal/SmartMicroWs/install/kiss_icp/lib:/home/michal/radar_ws/install/livox_ros_driver2/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/rviz_marker_tools/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs/lib:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs/lib:/home/michal/colcon_ws/install/reach_roscon_2023/lib:/home/michal/colcon_ws/install/arri_description/lib:/home/michal/colcon_ws/install/LASZIP/lib:/home/michal/ws_moveit2/install/ur_robot_driver/lib:/home/michal/ws_moveit2/install/ur_controllers/lib:/home/michal/ws_moveit2/install/ur_dashboard_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/michal'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_IL.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '3691'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2967a8d943ab42f9879d492765ff1d10'), ('COLORTERM', 'truecolor'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install:/home/michal/SmartMicroWs/install:/home/michal/radar_ws/install:/home/michal/github/ROSCon2023Demo/ros2_ws/install:/home/michal/colcon_ws/install:/home/michal/github/ROSConDemo/kraken_nav/install:/home/michal/ws_moveit2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'michal'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/michal/colcon_ws/install/mandeye_to_rosbag2/lib/x86_64-linux-gnu/pkgconfig:/home/michal/colcon_ws/install/mandeye_to_rosbag2/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'michal'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/michal/ws_moveit2/install/ur_robot_driver/bin:/home/michal/.cargo/bin:/opt/ros/humble/bin:/home/michal/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/michal/clion-2022.2.1/bin/:/home/michal/blender-3.2.2-linux-x64/:/home/michal/clang-format-all/'), ('SESSION_MANAGER', 'local/michal-AORUS-15P-XD:@/tmp/.ICE-unix/3691,unix/michal-AORUS-15P-XD:/tmp/.ICE-unix/3691'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_IL.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/07b29436_7abf_4af5_b341_71ac80e98a62'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_IL.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.213'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/SmartMicroWs/install/radar:/home/michal/SmartMicroWs/install/livox_ros_driver2:/home/michal/SmartMicroWs/install/kiss_icp:/home/michal/radar_ws/install/livox_ros_driver2:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_palletization:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_moveit_config:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/rviz_marker_tools:/home/michal/github/ROSCon2023Demo/ros2_ws/install/roscon2023_demo:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_deliberation:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto600_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto1500_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/global_path_lock:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs:/home/michal/colcon_ws/install/reach_roscon_2023:/home/michal/colcon_ws/install/dfr0592_driver:/home/michal/colcon_ws/install/arri_description:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/home/michal/ws_moveit2/install/ur:/home/michal/ws_moveit2/install/ur_calibration:/home/michal/ws_moveit2/install/ur_robot_driver:/home/michal/ws_moveit2/install/ur_moveit_config:/home/michal/ws_moveit2/install/ur_bringup:/home/michal/ws_moveit2/install/ur_description:/home/michal/ws_moveit2/install/ur_controllers:/home/michal/ws_moveit2/install/ur_dashboard_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_IL.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('CXX', '/usr/bin/c++'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_IL.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'en_IL.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=2967a8d943ab42f9879d492765ff1d10'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/michal/SmartMicroWs/install/radar_bringup/lib/python3.10/site-packages:/home/michal/SmartMicroWs/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/michal/radar_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_moveit_config/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav/lib/python3.10/site-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs/local/lib/python3.10/dist-packages:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration/lib/python3.10/site-packages:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav/lib/python3.10/site-packages:/home/michal/ws_moveit2/install/ur_robot_driver/local/lib/python3.10/dist-packages:/home/michal/ws_moveit2/install/ur_moveit_config/local/lib/python3.10/dist-packages:/home/michal/ws_moveit2/install/ur_dashboard_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_IL.UTF-8'), ('LC_PAPER', 'en_IL.UTF-8'), ('CC', '/usr/bin/cc'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn:/home/michal/SmartMicroWs/install/radar:/home/michal/SmartMicroWs/install/livox_ros_driver2:/home/michal/SmartMicroWs/install/kiss_icp:/home/michal/radar_ws/install/livox_ros_driver2:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_palletization:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_moveit_config:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/ur_dashboard_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/rviz_marker_tools:/home/michal/github/ROSCon2023Demo/ros2_ws/install/roscon2023_demo:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_deliberation:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto600_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto1500_description:/home/michal/github/ROSCon2023Demo/ros2_ws/install/moveit_task_constructor_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/global_path_lock:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lock_service_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/lane_provider_msgs:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower:/home/michal/github/ROSCon2023Demo/ros2_ws/install/blind_path_follower_msgs:/home/michal/colcon_ws/install/reach_roscon_2023:/home/michal/colcon_ws/install/dfr0592_driver:/home/michal/colcon_ws/install/arri_description:/home/michal/ws_moveit2/install/ur:/home/michal/ws_moveit2/install/ur_calibration:/home/michal/ws_moveit2/install/ur_robot_driver:/home/michal/ws_moveit2/install/ur_moveit_config:/home/michal/ws_moveit2/install/ur_bringup:/home/michal/ws_moveit2/install/ur_description:/home/michal/ws_moveit2/install/ur_controllers:/home/michal/ws_moveit2/install/ur_dashboard_msgs:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble')]), 'shell': False}
+[42.522269] (mandeye_unicorn) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[42.522421] (mandeye_unicorn) StdoutLine: {'line': b'-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/mandeye_unicorn\n'}
+[42.529427] (mandeye_unicorn) StdoutLine: {'line': b'-- Set runtime path of "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/mandeye_unicorn" to ""\n'}
+[42.529516] (mandeye_unicorn) StdoutLine: {'line': b'-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/base_station_unicorn\n'}
+[42.532264] (mandeye_unicorn) StdoutLine: {'line': b'-- Set runtime path of "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/base_station_unicorn" to ""\n'}
+[42.532381] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/package_run_dependencies/mandeye_unicorn\n'}
+[42.532440] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/parent_prefix_path/mandeye_unicorn\n'}
+[42.532509] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.sh\n'}
+[42.532574] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.dsv\n'}
+[42.532625] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.sh\n'}
+[42.532686] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.dsv\n'}
+[42.532768] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.bash\n'}
+[42.532827] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.sh\n'}
+[42.532867] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.zsh\n'}
+[42.532910] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.dsv\n'}
+[42.532964] (mandeye_unicorn) StdoutLine: {'line': b'-- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.dsv\n'}
+[42.533010] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/packages/mandeye_unicorn\n'}
+[42.533057] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig.cmake\n'}
+[42.533099] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig-version.cmake\n'}
+[42.533147] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.xml\n'}
+[42.533218] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8.0.6\n'}
+[42.533280] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8\n'}
+[42.533321] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so\n'}
+[42.533456] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8.0.6\n'}
+[42.533515] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8\n'}
+[42.533583] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so\n'}
+[42.533653] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api.h\n'}
+[42.533700] (mandeye_unicorn) StdoutLine: {'line': b'-- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api_version.h\n'}
+[42.535053] (mandeye_unicorn) CommandEnded: {'returncode': 0}
+[42.540382] (-) TimerEvent: {}
+[42.640638] (-) TimerEvent: {}
+[42.740932] (-) TimerEvent: {}
+[42.819177] (mandeye_unicorn) JobEnded: {'identifier': 'mandeye_unicorn', 'rc': 0}
+[42.819608] (-) EventReactorShutdown: {}

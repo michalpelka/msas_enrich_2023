@@ -1,0 +1,52 @@
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kvoid project_gui(DemoOdometryParameters&)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:531:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  531 |             [01;35m[KImGui::Text(roll.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:533:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  533 |             [01;35m[KImGui::Text(pitch.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:535:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  535 |             [01;35m[KImGui::Text(yaw.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kvoid SimHandlePc(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:778:38:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+  778 |         for (uint32_t i = 0; i < data[01;31m[K->[m[Kdot_num; i++)
+      |                                      [01;31m[K^~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/base_station_unicorn.cpp:[m[K In lambda function:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/base_station_unicorn.cpp:903:86:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpfd::open_file::open_file(const string&, const string&, const std::vector<std::__cxx11::basic_string<char> >&, bool)[m[K’ is deprecated: Use pfd::opt::multiselect instead of allow_multiselect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  903 |                     auto sel = pfd::open_file("Load las files", "C:\\", filters, true[01;35m[K)[m[K.result();
+      |                                                                                      [01;35m[K^[m[K
+In file included from [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/base_station_unicorn.cpp:40[m[K:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/3rd/portable-file-dialogs-master/portable-file-dialogs.h:1673:8:[m[K [01;36m[Knote: [m[Kdeclared here
+ 1673 | inline [01;36m[Kopen_file[m[K::open_file(std::string const &title,
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:780:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kp_point_data[m[K’ was not declared in this scope
+  780 |             const auto& p = [01;31m[Kp_point_data[m[K[i];
+      |                             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kbool exportLaz(const string&, const std::vector<Point3Di>&)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1292:75:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1292 | rintf(stderr, "DLL ERROR: setting coordinates for point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+      |                                                         [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+      |                                                             [01;35m[K|[m[K     [32m[K|[m[K
+      |                                                             [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+      |                                                         [32m[K%I64ld[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1305:59:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1305 |             fprintf(stderr, "DLL ERROR: writing point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+      |                                                       [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+      |                                                           [01;35m[K|[m[K     [32m[K|[m[K
+      |                                                           [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+      |                                                       [32m[K%I64ld[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1316:47:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1316 |     fprintf(stderr, "successfully written [01;35m[K%I64d[m[K points\n", [32m[Kp_count[m[K);
+      |                                           [01;35m[K~~~~^[m[K            [32m[K~~~~~~~[m[K
+      |                                               [01;35m[K|[m[K            [32m[K|[m[K
+      |                                               [01;35m[Kint[m[K          [32m[Klaszip_I64 {aka long int}[m[K
+      |                                           [32m[K%I64ld[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/base_station_unicorn.cpp:[m[K In function ‘[01m[Kbool load_pc_laz(std::string, PointCloud&)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/base_station_unicorn.cpp:268:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  268 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/mandeye_unicorn.dir/build.make:76: CMakeFiles/mandeye_unicorn.dir/src/mandeye_unicorn.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:190: CMakeFiles/mandeye_unicorn.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:166: all] Error 2

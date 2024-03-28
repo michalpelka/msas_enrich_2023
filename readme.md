@@ -14,101 +14,58 @@ https://github.com/JanuszBedkowski/msas_enrich_2023/blob/master/src/mandeye_unic
 # robot program
 https://github.com/JanuszBedkowski/msas_enrich_2023/blob/master/src/mandeye_unicorn/src/mandeye_unicorn_imu.cpp
 
-# run commands
-on robot
+# Mandeye unicorn ROS 2
+
+Refer to [Docker file](https://github.com/michalpelka/msas_enrich_2023/blob/master/Dockerfile) for build instruction.
+
+# Prerequisites
+
+You need : 
+- ROS 2 Humble (https://docs.ros.org/en/humble/Installation.html)
+- Livox SDK 2, compiled and installed from sources : https://github.com/Livox-SDK/Livox-SDK2
+- Some other dependencies:
+```bash
+sudo apt-get install ros-humble-pcl-ros freeglut3-dev libeigen3-dev
 ```
-screen -S mandeye
-cd ~/msas_enrich_2023/devel/lib/mandeye_unicorn
-./mandeye_unicorn_imu ./mid360_config_lio.json 0 /mnt/usb/ ~/enrich2023_data/
-```
+# Building
 
-on base station
-```
-cd ~/msas_enrich_2023/devel/lib/mandeye_unicorn/
-./base_station_unicorn
-```
-
-# setting up jackal
- - install ubuntu 16.04
- - install ros-kinetic bare bone
-
-# create workspace 
-
-```
-mkdir -p catkin_ws/src
-cd catkin_ws/src
-
-git clone https://github.com/JanuszBedkowski/enrich2019.git
-git submodule init --recursive
-
-sudo apt-get install ros-kinetic-controller-manager ros-kinetic-diagnostic-* ros-kinetic-nmea-* libpcap-dev ros-kinetic-realtime-tools ros-kinetic-roslint ros-kinetic-rosserial-server ros-kinetic-teleop-twist-* ros-kinetic-xacro ros-kinetetic-lms1xx ros-kinetic-pointgrey-camera-description ros-kinetic-interactive-marker-twist-server ros-kinetic-twist-mux ros-kinetic-robot-localization ros-kinetic-imu-filter-madgwick ros-kinetic-diff-drive-controller ros-kinetic-joint-state-controller ros-kinetic-*-fkie ros-kinetic-opencv3 ros-kinetic-image-transport ros-kinetic-camera-info-manager ros-kinetic-cv-bridge ros-kinetic-pcl-ros ros-kinetic-tf-conversions ros-kinetic-angles ros-kinetic-velodyne-description
+Go to mandeye_unicorn workspace and run
+```bash
+colcon build --packages-select mandeye_unicorn
 ```
 
-Make not needed packages ignored:
+Do not forget to source / add to bash installation:
+```bash
+source ./install/setup.bash 
 ```
-touch ~/catkin_ws/src/enrich2019/src/mandala_piap_unit_driver/mandala_ladybug/CATKIN_IGNORE
-touch ~/catkin_ws/src/enrich2019/src/mandala_piap_unit_driver/mandala_unit_color_pc/CATKIN_IGNORE
-touch ~/catkin_ws/src/enrich2019/src/mandala_piap_unit_driver/mandala_laserscan_2_cloud/CATKIN_IGNORE
+# Robot node
+
+Start robot node:
 ```
-
+ros2 run mandeye_unicorn mandeye_unicorn ./mid360_config_lio.json 0 /tmp/ /tmp/
 ```
-catkin_make
-```
+It should run robot driver, Livox listener and everything from MSAS 2023 without any problem.
 
-# setup joystick
+# Base station
+In another terminal run :
+``
+ros2 run mandeye_unicorn base_station_unicorn
+``
+# Running sim
 
-```
-wget https://packages.clearpathrobotics.com/public.key -O - | sudo apt-key add -
-sudo sh -c 'echo "deb https://packages.clearpathrobotics.com/stable/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/clearpath-latest.list'
-sudo apt-get update
-sudo apt-get install python-ds4drv
-sudo ds4drv-pair
-```
-
-
-
-
-# network interfaces
-
-set `/etc/network/interfaces`
-```
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-auto eno1
-iface eno1 inet static
-address 192.168.0.6
-netmask 255.255.255.0
-gateway 192.168.0.1
-dns-nameservers 8.8.8.8 8.8.4.4
-
-auto enp3s0
-iface enp3s0 inet static
-    address 192.168.1.100
-    netmask 255.255.255.0
-    gateway 0.0.0.0
-
+Install neccessary packages:
+```bash
+apt-get install ros-${ROS_DISTRO}-ackermann-msgs  ros-${ROS_DISTRO}-control-toolbox ros-${ROS_DISTRO}-gazebo-msgs ros-${ROS_DISTRO}-joy ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-rviz2 ros-${ROS_DISTRO}-tf2-ros ros-${ROS_DISTRO}-urdfdom ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-cyclonedds ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-topic-tools ros-${ROS_DISTRO}-topic-tools ros-${ROS_DISTRO}-nav-msgs
 ```
 
- - Create `/etc/network/if-up.d/script`
-```
-#!/bin/bash
-# to install script copy it  to
-# sudo cp script /etc/network/if-up.d/
-# sudo chmod 755 /etc/network/if-up.d/script
-route add -net 224.0.0.0 netmask 224.0.0.0 dev enp2s0
+Download simulator package and unzip and run it
+```bash
+gdown 1vPmKkDh22U8PtkF13Uli1VPlvYEaZlbD && unzip Ros2Sim.zip  -d .
+./Ros2Project.GameLauncher
 ```
 
- - Install `/etc/udev/rules.d`
-
+Start robot node, note that you need to point to valid `mid360_config_lio.json` even running sim:
+```bash
+ros2 run mandeye_unicorn mandeye_unicorn mid360_config_lio.json 1 /tmp/ /tmp/
 ```
-sudo cp enrich2019/config/etc/rules.d/*.rules /etc/udev/rules.d
-
-```
-
-
-
-
 

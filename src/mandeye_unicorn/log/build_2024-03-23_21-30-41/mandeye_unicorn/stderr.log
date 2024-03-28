@@ -1,0 +1,49 @@
+[33mCMake Warning (dev) at CMakeLists.txt:16 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  CMake variable PCL_ROOT is set to:
+
+    /usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[0mOpenGL found[0m
+[0mOPENGL_LIBRARIES: /usr/lib/x86_64-linux-gnu/libOpenGL.so/usr/lib/x86_64-linux-gnu/libGLX.so/usr/lib/x86_64-linux-gnu/libGLU.so[0m
+[0mGLUT found[0m
+[0mGLUT_glut_LIBRARY: /usr/lib/x86_64-linux-gnu/libglut.so[0m
+[0mEIGEN3 found[0m
+[0mEIGEN3_INCLUDE_DIR: /usr/include/eigen3[0m
+[0mEIGEN3_INCLUDE_DIRS: /usr/include/eigen3[0m
+[0mEigen3_DIR: /usr/share/eigen3/cmake[0m
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kvoid project_gui(DemoOdometryParameters&)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:530:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  530 |             [01;35m[KImGui::Text(roll.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:532:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  532 |             [01;35m[KImGui::Text(pitch.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:534:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+  534 |             [01;35m[KImGui::Text(yaw.c_str())[m[K;
+      |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kbool exportLaz(const string&, const std::vector<Point3Di>&)[m[K’:
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1251:75:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1251 | rintf(stderr, "DLL ERROR: setting coordinates for point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+      |                                                         [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+      |                                                             [01;35m[K|[m[K     [32m[K|[m[K
+      |                                                             [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+      |                                                         [32m[K%I64ld[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1264:59:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1264 |             fprintf(stderr, "DLL ERROR: writing point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+      |                                                       [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+      |                                                           [01;35m[K|[m[K     [32m[K|[m[K
+      |                                                           [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+      |                                                       [32m[K%I64ld[m[K
+[01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1275:47:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+ 1275 |     fprintf(stderr, "successfully written [01;35m[K%I64d[m[K points\n", [32m[Kp_count[m[K);
+      |                                           [01;35m[K~~~~^[m[K            [32m[K~~~~~~~[m[K
+      |                                               [01;35m[K|[m[K            [32m[K|[m[K
+      |                                               [01;35m[Kint[m[K          [32m[Klaszip_I64 {aka long int}[m[K
+      |                                           [32m[K%I64ld[m[K

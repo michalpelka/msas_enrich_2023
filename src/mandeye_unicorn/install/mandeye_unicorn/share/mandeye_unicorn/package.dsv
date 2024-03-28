@@ -1,0 +1,11 @@
+source;share/mandeye_unicorn/hook/cmake_prefix_path.ps1
+source;share/mandeye_unicorn/hook/cmake_prefix_path.dsv
+source;share/mandeye_unicorn/hook/cmake_prefix_path.sh
+source;share/mandeye_unicorn/hook/ld_library_path_lib.ps1
+source;share/mandeye_unicorn/hook/ld_library_path_lib.dsv
+source;share/mandeye_unicorn/hook/ld_library_path_lib.sh
+source;share/mandeye_unicorn/local_setup.bash
+source;share/mandeye_unicorn/local_setup.dsv
+source;share/mandeye_unicorn/local_setup.ps1
+source;share/mandeye_unicorn/local_setup.sh
+source;share/mandeye_unicorn/local_setup.zsh

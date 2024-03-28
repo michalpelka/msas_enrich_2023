@@ -1,0 +1,121 @@
+[0.243s] Invoking command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake /home/michal/code/msas_elrob_2024/mandeye_unicorn -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn
+[0.259s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.406s] -- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+[0.435s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.437s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.441s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.451s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.465s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.515s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.517s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.544s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.679s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.787s] -- Found visualization_msgs: 4.2.3 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.980s] -- Found pcl_ros: 2.4.0 (/opt/ros/humble/share/pcl_ros/cmake)
+[1.214s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.215s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.558s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.597s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[1.924s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.931s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[2.095s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[2.104s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.111s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[2.313s] -- Found Qhull version 8.0.2
+[2.473s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.677s] [33mCMake Warning (dev) at CMakeLists.txt:16 (find_package):
+[2.677s]   Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+[2.677s]   Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+[2.677s]   command to set the policy and suppress this warning.
+[2.677s] 
+[2.677s]   CMake variable PCL_ROOT is set to:
+[2.677s] 
+[2.678s]     /usr
+[2.678s] 
+[2.678s]   For compatibility, CMake is ignoring the variable.
+[2.678s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.678s] [0m
+[2.687s] [0mOpenGL found[0m
+[2.687s] [0mOPENGL_LIBRARIES: /usr/lib/x86_64-linux-gnu/libOpenGL.so/usr/lib/x86_64-linux-gnu/libGLX.so/usr/lib/x86_64-linux-gnu/libGLU.so[0m
+[2.693s] -- Checking for module 'glut'
+[2.698s] --   No package 'glut' found
+[2.701s] [0mGLUT found[0m
+[2.701s] [0mGLUT_glut_LIBRARY: /usr/lib/x86_64-linux-gnu/libglut.so[0m
+[2.702s] [0mEIGEN3 found[0m
+[2.702s] [0mEIGEN3_INCLUDE_DIR: /usr/include/eigen3[0m
+[2.702s] [0mEIGEN3_INCLUDE_DIRS: /usr/include/eigen3[0m
+[2.702s] [0mEigen3_DIR: /usr/share/eigen3/cmake[0m
+[2.825s] -- Configuring done
+[2.892s] -- Generating done
+[2.895s] -- Build files have been written to: /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn
+[2.914s] Invoked command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake /home/michal/code/msas_elrob_2024/mandeye_unicorn -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn
+[2.916s] Invoking command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --build /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn -- -j16 -l16
+[2.961s] [35m[1mConsolidate compiler generated dependencies of target laszip_api[0m
+[2.963s] [35m[1mConsolidate compiler generated dependencies of target laszip[0m
+[2.973s] [  4%] Built target laszip_api
+[2.980s] [ 46%] Built target laszip
+[2.994s] [35m[1mConsolidate compiler generated dependencies of target mandeye_unicorn[0m
+[2.995s] [35m[1mConsolidate compiler generated dependencies of target base_station_unicorn[0m
+[3.029s] [ 51%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/mandeye_unicorn.cpp.o[0m
+[3.029s] [ 75%] Built target base_station_unicorn
+[8.758s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kvoid project_gui(DemoOdometryParameters&)[m[K’:
+[8.758s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:530:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+[8.758s]   530 |             [01;35m[KImGui::Text(roll.c_str())[m[K;
+[8.758s]       |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[8.758s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:532:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+[8.758s]   532 |             [01;35m[KImGui::Text(pitch.c_str())[m[K;
+[8.758s]       |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[8.758s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:534:24:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat-security-Wformat-security]8;;[m[K]
+[8.758s]   534 |             [01;35m[KImGui::Text(yaw.c_str())[m[K;
+[8.758s]       |             [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[9.059s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:[m[K In function ‘[01m[Kbool exportLaz(const string&, const std::vector<Point3Di>&)[m[K’:
+[9.059s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1251:75:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[9.059s]  1251 | rintf(stderr, "DLL ERROR: setting coordinates for point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+[9.059s]       |                                                         [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+[9.059s]       |                                                             [01;35m[K|[m[K     [32m[K|[m[K
+[9.059s]       |                                                             [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+[9.059s]       |                                                         [32m[K%I64ld[m[K
+[9.059s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1264:59:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[9.059s]  1264 |             fprintf(stderr, "DLL ERROR: writing point [01;35m[K%I64d[m[K\n", [32m[Kp_count[m[K);
+[9.059s]       |                                                       [01;35m[K~~~~^[m[K     [32m[K~~~~~~~[m[K
+[9.060s]       |                                                           [01;35m[K|[m[K     [32m[K|[m[K
+[9.060s]       |                                                           [01;35m[Kint[m[K   [32m[Klaszip_I64 {aka long int}[m[K
+[9.060s]       |                                                       [32m[K%I64ld[m[K
+[9.060s] [01m[K/home/michal/code/msas_elrob_2024/mandeye_unicorn/src/mandeye_unicorn.cpp:1275:47:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 3 has type ‘[01m[Klaszip_I64[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[9.060s]  1275 |     fprintf(stderr, "successfully written [01;35m[K%I64d[m[K points\n", [32m[Kp_count[m[K);
+[9.060s]       |                                           [01;35m[K~~~~^[m[K            [32m[K~~~~~~~[m[K
+[9.060s]       |                                               [01;35m[K|[m[K            [32m[K|[m[K
+[9.060s]       |                                               [01;35m[Kint[m[K          [32m[Klaszip_I64 {aka long int}[m[K
+[9.060s]       |                                           [32m[K%I64ld[m[K
+[41.498s] [ 77%] [32m[1mLinking CXX executable mandeye_unicorn[0m
+[42.997s] [100%] Built target mandeye_unicorn
+[43.009s] Invoked command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --build /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn -- -j16 -l16
+[43.099s] Invoking command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --install /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn
+[43.105s] -- Install configuration: "Release"
+[43.105s] -- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/mandeye_unicorn
+[43.112s] -- Set runtime path of "/home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/mandeye_unicorn" to ""
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/mandeye_unicorn/base_station_unicorn
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/package_run_dependencies/mandeye_unicorn
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/parent_prefix_path/mandeye_unicorn
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.sh
+[43.113s] -- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/ament_prefix_path.dsv
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.sh
+[43.113s] -- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/environment/path.dsv
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.bash
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.sh
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.zsh
+[43.113s] -- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/local_setup.dsv
+[43.113s] -- Installing: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.dsv
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/ament_index/resource_index/packages/mandeye_unicorn
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig.cmake
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/cmake/mandeye_unicornConfig-version.cmake
+[43.113s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/share/mandeye_unicorn/package.xml
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8.0.6
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so.8
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip.so
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8.0.6
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so.8
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/lib/liblaszip_api.so
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api.h
+[43.114s] -- Up-to-date: /home/michal/code/msas_elrob_2024/mandeye_unicorn/install/mandeye_unicorn/include/laszip/laszip_api_version.h
+[43.116s] Invoked command in '/home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/michal/SmartMicroWs/install/radar_bringup:/home/michal/github/ROSCon2023Demo/ros2_ws/install/otto_fleet_nav:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_orchestration:/home/michal/github/ROSConDemo/kraken_nav/install/o3de_kraken_nav:/opt/ros/humble /usr/bin/cmake --install /home/michal/code/msas_elrob_2024/mandeye_unicorn/build/mandeye_unicorn

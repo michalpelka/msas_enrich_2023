@@ -1,12 +1,17 @@
-#include <ros/ros.h>
-#include <pcl_ros/point_cloud.h>
+#include "rclcpp/rclcpp.hpp"
+//#include <pcl_ros/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl_conversions/pcl_conversions.h>
-#include <nav_msgs/Path.h>
-#include "std_msgs/Bool.h"
-#include "std_msgs/Int32.h"
-#include "std_msgs/Float32.h"
-#include "geometry_msgs/Twist.h"
+
+#include "geometry_msgs/msg/twist.hpp"
+#include "nav_msgs/msg/path.hpp"
+#include "std_msgs/msg/bool.hpp"
+#include "std_msgs/msg/float32.hpp"
+#include "std_msgs/msg/int32.hpp"
+#include "std_msgs/msg/string.hpp"
+#include "sensor_msgs/msg/imu.hpp"
+#include "sensor_msgs/point_cloud2_iterator.hpp"
+
 #include <iostream>
 #include <GL/freeglut.h>
 #include "imgui.h"
@@ -98,9 +103,9 @@ struct BaseStationParameters
 };
 
 float m_gizmo[] = {1, 0, 0, 0,
-                   0, 1, 0, 0,
-                   0, 0, 1, 0,
-                   0, 0, 0, 1};
+                    0, 1, 0, 0,
+                    0, 0, 1, 0,
+                    0, 0, 0, 1};
 
 const unsigned int window_width = 640;
 const unsigned int window_height = 480;
@@ -111,27 +116,26 @@ float rotate_x = 0.0, rotate_y = 0.0;
 float translate_z = -30.0;
 float translate_x, translate_y = 0.0;
 
-// ros::NodeHandle *nh;
-// ros::Publisher pub_path;
-// ros::Publisher pub_vel;
-ros::Publisher pub_update_map;
-ros::Publisher pub_get_current_pc;
-ros::Publisher pub_get_current_map;
-ros::Publisher pub_reset_jackal;
-ros::Publisher pub_calib_height_above_ground;
-ros::Publisher pub_calib_x_offset;
-ros::Publisher pub_single_goal_forward;
-ros::Publisher pub_abort;
-ros::Publisher pub_multiple_goals_to_robot;
-ros::Publisher pub_multiple_goals_to_robot_execute;
-ros::Publisher pub_get_last_goal_pc;
-ros::Publisher pub_save_buckets;
-ros::Publisher pub_load_buckets;
+std::shared_ptr<rclcpp::Node> nodePtr;
 
-ros::Subscriber sub_get_current_pc;
-ros::Subscriber sub_get_current_map;
-ros::Subscriber sub_current_robot_pose;
-ros::Subscriber sub_current_mission_goal;
+rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pub_get_current_pc;
+rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr pub_get_current_map;
+rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr pub_reset_jackal;
+rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr pub_calib_height_above_ground;
+rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr pub_calib_x_offset;
+rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr pub_single_goal_forward;
+rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr pub_update_map;
+rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pub_get_last_goal_pc;
+rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr pub_multiple_goals_to_robot;
+rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pub_multiple_goals_to_robot_execute;
+rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pub_save_buckets;
+rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pub_load_buckets;
+rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr pub_abort;
+
+std::shared_ptr<rclcpp::Subscription<sensor_msgs::msg::PointCloud2>> sub_get_current_pc;
+std::shared_ptr<rclcpp::Subscription<sensor_msgs::msg::PointCloud2>> sub_get_current_map;
+std::shared_ptr<rclcpp::Subscription<nav_msgs::msg::Path>> sub_current_robot_pose;
+std::shared_ptr<rclcpp::Subscription<nav_msgs::msg::Path>> sub_current_mission_goal;
 
 // pub_current_robot_pose = nh.advertise<nav_msgs::Path>  ("current_robot_pose", 1);
 
@@ -360,20 +364,25 @@ void idle(void);
 void main_loop(bool render);
 Eigen::Vector3d GLWidgetGetOGLPos(int x, int y);
 
-void currentPointCloudCallback(const pcl::PointCloud<pcl::PointXYZI>::Ptr &msg)
+void currentPointCloudCallback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
     std::lock_guard<std::mutex> lck(point_clouds_lock);
     // current_points.clear();
     std::vector<Point3Di> current_points;
 
+    sensor_msgs::PointCloud2Iterator<float> iter_x(*msg, "x");
+    sensor_msgs::PointCloud2Iterator<float> iter_y(*msg, "y");
+    sensor_msgs::PointCloud2Iterator<float> iter_z(*msg, "z");
+    sensor_msgs::PointCloud2Iterator<float> iter_i(*msg, "intensity");
+
     int pc_count = 0;
-    for (pcl::PointCloud<pcl::PointXYZI>::iterator it = msg->begin(); it != msg->end(); ++it)
+    for (; iter_x != iter_x.end(); ++iter_x, ++iter_y, ++iter_z)
     {
         Point3Di p;
         p.index_pose = 0;
-        p.intensity = it->intensity;
+        p.intensity = *iter_i;
         p.timestamp = 0;
-        p.point = Eigen::Vector3d(it->x, it->y, it->z);
+        p.point = Eigen::Vector3d(*iter_x, *iter_y, *iter_z);
         current_points.push_back(p);
         pc_count++;
     }
@@ -386,37 +395,48 @@ void currentPointCloudCallback(const pcl::PointCloud<pcl::PointXYZI>::Ptr &msg)
     std::cout << "currentPointCloudCallback: [" << pc_count << " points]" << std::endl;
 }
 
-void currentMapCallback(const pcl::PointCloud<pcl::PointXYZ>::Ptr &msg)
+void currentMapCallback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
+    std::cout << "currentMapCallback msg->width: " << msg->width << std::endl;
+    for (int i = 0; i < msg->fields.size(); i++)
+    {
+        std::cout << "field name: " << msg->fields[i].name << std::endl;
+    }
     std::lock_guard<std::mutex> lck(current_map_lock);
     current_map.clear();
     int pc_count = 0;
-    for (pcl::PointCloud<pcl::PointXYZ>::iterator it = msg->begin(); it != msg->end(); ++it)
+
+    sensor_msgs::PointCloud2Iterator<float> iter_x(*msg, "x");
+    sensor_msgs::PointCloud2Iterator<float> iter_y(*msg, "y");
+    sensor_msgs::PointCloud2Iterator<float> iter_z(*msg, "z");
+    //todo(mpelka) - add intensity handling (keep optional)
+//    sensor_msgs::PointCloud2Iterator<float> iter_i(*msg, "intensity");
+    for (; iter_x != iter_x.end(); ++iter_x, ++iter_y, ++iter_z)
     {
-        current_map.emplace_back(it->x, it->y, it->z);
+        current_map.emplace_back(*iter_x, *iter_y, *iter_z);
         pc_count++;
     }
     std::cout << "currentMapCallback: [" << pc_count << " active buckets]" << std::endl;
 }
 
-void currentRobotPoseCallback(const nav_msgs::Path::Ptr &msg)
+void currentRobotPoseCallback(const nav_msgs::msg::Path &msg)
 {
     std::lock_guard<std::mutex> lck(params.current_robot_pose_lock);
 
-    params.current_robot_pose.translation().x() = msg->poses[0].pose.position.x;
-    params.current_robot_pose.translation().y() = msg->poses[0].pose.position.y;
-    params.current_robot_pose.translation().z() = msg->poses[0].pose.position.z;
+    params.current_robot_pose.translation().x() = msg.poses[0].pose.position.x;
+    params.current_robot_pose.translation().y() = msg.poses[0].pose.position.y;
+    params.current_robot_pose.translation().z() = msg.poses[0].pose.position.z;
 
     Eigen::Quaterniond q;
-    q.w() = msg->poses[0].pose.orientation.w;
-    q.x() = msg->poses[0].pose.orientation.x;
-    q.y() = msg->poses[0].pose.orientation.y;
-    q.z() = msg->poses[0].pose.orientation.z;
+    q.w() = msg.poses[0].pose.orientation.w;
+    q.x() = msg.poses[0].pose.orientation.x;
+    q.y() = msg.poses[0].pose.orientation.y;
+    q.z() = msg.poses[0].pose.orientation.z;
 
     params.current_robot_pose.linear() = q.toRotationMatrix();
 }
 
-void currentMissionGoalCallback(const nav_msgs::Path::Ptr &msg)
+void currentMissionGoalCallback(const nav_msgs::msg::Path &msg)
 {
 
     // std::mutex current_mission_goal_lock;
@@ -424,15 +444,15 @@ void currentMissionGoalCallback(const nav_msgs::Path::Ptr &msg)
 
     std::lock_guard<std::mutex> lck(params.current_mission_goal_lock);
 
-    params.current_mission_goal.translation().x() = msg->poses[0].pose.position.x;
-    params.current_mission_goal.translation().y() = msg->poses[0].pose.position.y;
-    params.current_mission_goal.translation().z() = msg->poses[0].pose.position.z;
+    params.current_mission_goal.translation().x() = msg.poses[0].pose.position.x;
+    params.current_mission_goal.translation().y() = msg.poses[0].pose.position.y;
+    params.current_mission_goal.translation().z() = msg.poses[0].pose.position.z;
 
     Eigen::Quaterniond q;
-    q.w() = msg->poses[0].pose.orientation.w;
-    q.x() = msg->poses[0].pose.orientation.x;
-    q.y() = msg->poses[0].pose.orientation.y;
-    q.z() = msg->poses[0].pose.orientation.z;
+    q.w() = msg.poses[0].pose.orientation.w;
+    q.x() = msg.poses[0].pose.orientation.x;
+    q.y() = msg.poses[0].pose.orientation.y;
+    q.z() = msg.poses[0].pose.orientation.z;
 
     params.current_mission_goal.linear() = q.toRotationMatrix();
 }
@@ -533,7 +553,7 @@ bool exportLaz(const std::string &filename,
         coordinates[2] = p.point.z();
         if (laszip_set_coordinates(laszip_writer, coordinates))
         {
-            fprintf(stderr, "DLL ERROR: setting coordinates for point %I64d\n", p_count);
+            fprintf(stderr, "DLL ERROR: setting coordinates for point %I64ld\n", p_count);
             return false;
         }
 
@@ -546,7 +566,7 @@ bool exportLaz(const std::string &filename,
 
         if (laszip_write_point(laszip_writer))
         {
-            fprintf(stderr, "DLL ERROR: writing point %I64d\n", p_count);
+            fprintf(stderr, "DLL ERROR: writing point %I64ld\n", p_count);
             return false;
         }
     }
@@ -557,7 +577,7 @@ bool exportLaz(const std::string &filename,
         return false;
     }
 
-    fprintf(stderr, "successfully written %I64d points\n", p_count);
+    fprintf(stderr, "successfully written %I64ld points\n", p_count);
 
     // close the writer
 
@@ -601,32 +621,32 @@ void project_gui(BaseStationParameters &paramters)
         ImGui::InputFloat("calib_height_above_ground", &params.calib_height_above_ground);
         if (calib_height_above_ground_prev != params.calib_height_above_ground)
         {
-            ros::NodeHandle nh;
-            std_msgs::Float32 h;
+            std_msgs::msg::Float32 h;
             h.data = params.calib_height_above_ground;
 
             std::cout << "params.calib_height_above_ground: " << params.calib_height_above_ground << std::endl;
-            pub_calib_height_above_ground.publish(h);
+            assert(pub_calib_height_above_ground);
+            pub_calib_height_above_ground->publish(h);
         }
 
         float calib_x_offset_prev = params.calib_x_offset;
         ImGui::InputFloat("calib_x_offset", &params.calib_x_offset);
         if (calib_x_offset_prev != params.calib_x_offset)
         {
-            ros::NodeHandle nh;
-            std_msgs::Float32 h;
+            std_msgs::msg::Float32 h;
             h.data = params.calib_x_offset;
 
             std::cout << "params.calib_x_offset: " << params.calib_x_offset << std::endl;
-            pub_calib_x_offset.publish(h);
+            assert(pub_calib_x_offset);
+            pub_calib_x_offset->publish(h);
         }
 
         if (ImGui::Button("update_map_on"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Bool message;
+            std_msgs::msg::Bool message;
             message.data = true;
-            pub_update_map.publish(message);
+            assert(pub_update_map);
+            pub_update_map->publish(message);
 
             std::cout << "update_map_on" << std::endl;
         }
@@ -635,29 +655,29 @@ void project_gui(BaseStationParameters &paramters)
 
         if (ImGui::Button("update_map_off"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Bool message;
+            std_msgs::msg::Bool message;
             message.data = false;
-            pub_update_map.publish(message);
+            assert(pub_update_map);
+            pub_update_map->publish(message);
 
             std::cout << "update_map_off" << std::endl;
         }
 
         if (ImGui::Button("reset jackal (clear map)"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Bool reset;
+            std_msgs::msg::Bool reset;
             reset.data = true;
-            pub_reset_jackal.publish(reset);
+            assert(pub_reset_jackal);
+            pub_reset_jackal->publish(reset);
             std::cout << "reset jackal (clear map)" << std::endl;
         }
 
         if (ImGui::Button("get current point cloud"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Int32 get_current_pc;
+            std_msgs::msg::Int32 get_current_pc;
             get_current_pc.data = params.get_current_point_cloud_nr_points;
-            pub_get_current_pc.publish(get_current_pc);
+            assert(pub_get_current_pc);
+            pub_get_current_pc->publish(get_current_pc);
             std::cout << "send get_current_pc" << std::endl;
         }
         ImGui::SameLine();
@@ -665,10 +685,10 @@ void project_gui(BaseStationParameters &paramters)
 
         if (ImGui::Button("get current map (means in buckets)"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Bool get;
+            std_msgs::msg::Bool get;
             get.data = true;
-            pub_get_current_map.publish(get);
+            assert(pub_get_current_map);
+            pub_get_current_map->publish(get);
             std::cout << "send get_current_map" << std::endl;
             params.show_buckets = true;
         }
@@ -678,9 +698,10 @@ void project_gui(BaseStationParameters &paramters)
         ImGui::Text("-------------------------Planner--------------------------------");
         if (ImGui::Button("ABORT MISSION"))
         {
-            std_msgs::Bool abort;
+            std_msgs::msg::Bool abort;
             abort.data = true;
-            pub_abort.publish(abort);
+            assert(pub_abort);
+            pub_abort->publish(abort);
             static int count = 0;
             std::cout << "[" << count++ << "] ABORT" << std::endl;
 
@@ -819,9 +840,9 @@ void project_gui(BaseStationParameters &paramters)
                 // ImGui::SameLine();
                 if (ImGui::Button("set on robot"))
                 {
-                    nav_msgs::Path destination;
+                    nav_msgs::msg::Path destination;
                     destination.header.frame_id = "odom";
-                    destination.header.stamp = ros::Time::now();
+//                    destination.header.stamp = ros::Time::now();
                     destination.poses.resize(multiple_goals[multiple_goals_working_index].size());
                     std::cout << "Sending " << multiple_goals[multiple_goals_working_index].size() << " goals" << std::endl;
                     for (int i = 0; i < multiple_goals[multiple_goals_working_index].size(); i++)
@@ -836,19 +857,21 @@ void project_gui(BaseStationParameters &paramters)
                         p.pose.orientation.x = q.x();
                         p.pose.orientation.y = q.y();
                         p.pose.orientation.z = q.z();
-                        pub_multiple_goals_to_robot.publish(destination);
+                        assert(pub_multiple_goals_to_robot);
+                        pub_multiple_goals_to_robot->publish(destination);
                     }
                 }
                 ImGui::SameLine();
                 if (ImGui::Button("execute"))
                 {
                     // pub_multiple_goals_to_robot_execute = nh.advertise< std_msgs::Int32 > ("multiple_goals_to_robot_execute", 1);
-                    ros::NodeHandle nh;
-                    std_msgs::Int32 num_scans_from_end;
+
+                    std_msgs::msg::Int32 num_scans_from_end;
                     num_scans_from_end.data = params.num_scans_from_end;
 
                     std::cout << "send params.num_scans_from_end: " << params.num_scans_from_end << std::endl;
-                    pub_multiple_goals_to_robot_execute.publish(num_scans_from_end);
+                    assert(pub_multiple_goals_to_robot_execute);
+                    pub_multiple_goals_to_robot_execute->publish(num_scans_from_end);
 
                     params.planner_mode = false;
                     params.single_goal_forward = false;
@@ -860,10 +883,10 @@ void project_gui(BaseStationParameters &paramters)
         ImGui::Text("-------------------------Point Clouds--------------------------------");
         if (ImGui::Button("get point cloud from last goal"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Int32 get_current_pc;
+            std_msgs::msg::Int32 get_current_pc;
             get_current_pc.data = params.get_current_point_cloud_nr_points;
-            pub_get_last_goal_pc.publish(get_current_pc);
+            assert(pub_get_last_goal_pc);
+            pub_get_last_goal_pc->publish(get_current_pc);
             std::cout << "send pub_get_last_goal_pc" << std::endl;
         }
         {
@@ -1036,19 +1059,19 @@ void project_gui(BaseStationParameters &paramters)
 
         if (ImGui::Button("save_buckets"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Int32 get_current_pc;
+            std_msgs::msg::Int32 get_current_pc;
             get_current_pc.data = 1;
-            pub_save_buckets.publish(get_current_pc);
+            assert(pub_save_buckets);
+            pub_save_buckets->publish(get_current_pc);
             std::cout << "send pub_save_buckets" << std::endl;
         }
         ImGui::SameLine();
         if (ImGui::Button("load_buckets"))
         {
-            ros::NodeHandle nh;
-            std_msgs::Int32 get_current_pc;
+            std_msgs::msg::Int32 get_current_pc;
             get_current_pc.data = 1;
-            pub_load_buckets.publish(get_current_pc);
+            assert(pub_load_buckets);
+            pub_load_buckets->publish(get_current_pc);
             std::cout << "send pub_load_buckets" << std::endl;
         }
 
@@ -1085,39 +1108,35 @@ int main(int argc, char *argv[])
     params.major = 0;
     params.minor = 1;
 
-    ros::init(argc, argv, "BaseStationUnicorn");
+    rclcpp::init(argc, argv);
+    nodePtr = rclcpp::Node::make_shared("BaseStationUnicorn");
 
-    ros::NodeHandle nh;
-    pub_get_current_pc = nh.advertise<std_msgs::Int32>("get_current_pc", 1);
-    pub_get_current_map = nh.advertise<std_msgs::Bool>("get_current_map", 1);
-    pub_reset_jackal = nh.advertise<std_msgs::Bool>("reset_jackal", 1);
-    pub_calib_height_above_ground = nh.advertise<std_msgs::Float32>("calib_height_above_ground", 1);
-    pub_calib_x_offset = nh.advertise<std_msgs::Float32>("calib_x_offset", 1);
-    pub_single_goal_forward = nh.advertise<nav_msgs::Path>("single_goal_forward", 1);
-    pub_update_map = nh.advertise<std_msgs::Bool>("update_map", 1);
-
-    pub_get_last_goal_pc = nh.advertise<std_msgs::Int32>("get_last_goal_pc", 1);
-
-    pub_multiple_goals_to_robot = nh.advertise<nav_msgs::Path>("multiple_goals_to_robot", 1);
-    pub_multiple_goals_to_robot_execute = nh.advertise<std_msgs::Int32>("multiple_goals_to_robot_execute", 1);
-
-    pub_save_buckets = nh.advertise<std_msgs::Int32>("pub_save_buckets", 1);
-    pub_load_buckets = nh.advertise<std_msgs::Int32>("pub_load_buckets", 1);
+    pub_get_current_pc = nodePtr->create_publisher<std_msgs::msg::Int32>("get_current_pc", 1);
+    pub_get_current_map = nodePtr->create_publisher<std_msgs::msg::Bool>("get_current_map", 1);
+    pub_reset_jackal = nodePtr->create_publisher<std_msgs::msg::Bool>("reset_jackal", 1);
+    pub_calib_height_above_ground = nodePtr->create_publisher<std_msgs::msg::Float32>("calib_height_above_ground", 1);
+    pub_calib_x_offset = nodePtr->create_publisher<std_msgs::msg::Float32>("calib_x_offset", 1);
+    pub_single_goal_forward = nodePtr->create_publisher<nav_msgs::msg::Path>("single_goal_forward", 1);
+    pub_update_map = nodePtr->create_publisher<std_msgs::msg::Bool>("update_map", 1);
+    pub_get_last_goal_pc = nodePtr->create_publisher<std_msgs::msg::Int32>("get_last_goal_pc", 1);
+    pub_multiple_goals_to_robot = nodePtr->create_publisher<nav_msgs::msg::Path>("multiple_goals_to_robot", 1);
+    pub_multiple_goals_to_robot_execute = nodePtr->create_publisher<std_msgs::msg::Int32>("multiple_goals_to_robot_execute", 1);
+    pub_save_buckets = nodePtr->create_publisher<std_msgs::msg::Int32>("pub_save_buckets", 1);
+    pub_load_buckets = nodePtr->create_publisher<std_msgs::msg::Int32>("pub_load_buckets", 1);
 
     // ros::Publisher pub_save_buckets;
     // ros::Publisher pub_load_buckets;
 
     // pub_current_robot_pose = nh.advertise<nav_msgs::Path>  ("current_robot_pose", 1);
 
-    sub_get_current_pc = nh.subscribe("current_point_cloud", 1, currentPointCloudCallback);
-    sub_get_current_map = nh.subscribe("current_map", 1, currentMapCallback);
-    sub_current_robot_pose = nh.subscribe("current_robot_pose", 1, currentRobotPoseCallback);
-    sub_current_mission_goal = nh.subscribe("current_mission_goal", 1, currentMissionGoalCallback);
+    sub_get_current_pc = nodePtr->create_subscription<sensor_msgs::msg::PointCloud2>("current_point_cloud", 1, currentPointCloudCallback);
+    sub_get_current_map = nodePtr->create_subscription<sensor_msgs::msg::PointCloud2>("current_map", 1, currentMapCallback);
+    sub_current_robot_pose = nodePtr->create_subscription<nav_msgs::msg::Path>("current_robot_pose", 1, currentRobotPoseCallback);
+    sub_current_mission_goal = nodePtr->create_subscription<nav_msgs::msg::Path>("current_mission_goal", 1, currentMissionGoalCallback);
 
-    pub_abort = nh.advertise<std_msgs::Bool>("abort_mission", 1);
+    pub_abort = nodePtr->create_publisher<std_msgs::msg::Bool>("abort_mission", 1);
     // pub_path = nh.advertise< nav_msgs::Path > ("path", 1);
     // pub_vel = nh.advertise< geometry_msgs::Twist >("cmd_vel", 1);
-    ros::Rate loop_rate(1);
 
     if (false == initGL(&argc, (char **)argv))
     {
@@ -1170,6 +1189,7 @@ bool initGL(int *argc, char **argv)
 
 void display()
 {
+
     ImGuiIO &io = ImGui::GetIO();
     glViewport(0, 0, (GLsizei)io.DisplaySize.x, (GLsizei)io.DisplaySize.y);
     glMatrixMode(GL_PROJECTION);
@@ -1574,9 +1594,9 @@ void mouse(int glut_button, int state, int x, int y)
                         goal(1, 3) = params.goal_arrow_begin.y();
                         goal(2, 3) = params.goal_arrow_begin.z();
 
-                        nav_msgs::Path destination;
+                        nav_msgs::msg::Path destination;
                         destination.header.frame_id = "odom";
-                        destination.header.stamp = ros::Time::now();
+//                        destination.header.stamp = ros::Time::now();
                         destination.poses.resize(1);
                         auto &p = destination.poses[0];
                         p.pose.position.x = goal.translation().x();
@@ -1589,7 +1609,8 @@ void mouse(int glut_button, int state, int x, int y)
                         p.pose.orientation.y = q.y();
                         p.pose.orientation.z = q.z();
                         // pub_multiple_goals_to_robot
-                        pub_single_goal_forward.publish(destination);
+                        assert(pub_single_goal_forward);
+                        pub_single_goal_forward->publish(destination);
 
                         params.goal_arrow_begin = {0, 0, 0};
                         params.goal_arrow_end = {0, 0, 0};
@@ -1696,7 +1717,7 @@ void main_loop(bool render)
 {
     auto start = std::chrono::steady_clock::now();
 
-    ros::spinOnce();
+    rclcpp::spin_some(nodePtr);
 
     auto end = std::chrono::steady_clock::now();
     std::chrono::duration<double> elapsed_seconds = end - start;

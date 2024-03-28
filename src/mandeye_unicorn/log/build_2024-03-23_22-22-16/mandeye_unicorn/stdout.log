@@ -1,0 +1,6 @@
+[  4%] Built target laszip_api
+[ 46%] Built target laszip
+[35m[1mConsolidate compiler generated dependencies of target mandeye_unicorn[0m
+[35m[1mConsolidate compiler generated dependencies of target base_station_unicorn[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/mandeye_unicorn.dir/src/mandeye_unicorn.cpp.o[0m
+[ 75%] Built target base_station_unicorn
