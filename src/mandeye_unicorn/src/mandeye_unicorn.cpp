@@ -44,8 +44,7 @@
 #include <Fusion.h>
 
 #include <chrono>
-#include <point_to_point_source_to_target_tait_bryan_wc_jacobian.h>
-#include <relative_pose_tait_bryan_wc_jacobian.h>
+#include "pch.h"
 #include <transformations.h>
 // #include <smoothness_tait_bryan_wc_jacobian.h>
 #include <point_to_point_source_to_target_tait_bryan_wc_jacobian_simplified.h>
@@ -94,7 +93,7 @@ struct DemoOdometryParameters
     std::string livox_config_file = "mid360_config_lio.json";
     float pc_filter_length = 1.0;
     float pc_filter_width = 0.5;
-    int number_max_points = 100000;
+    int number_max_points = 10000;
     int number_max_points_init = 10000;
 
     bool fusionConventionNwu = true;
@@ -137,7 +136,7 @@ struct DemoOdometryParameters
     int counter_fail = 0;
 
     bool use_imu_for_initial_guess = true;
-    bool use_gyro_compenstation = true;
+    bool use_gyro_compenstation = false;
 };
 
 DemoOdometryParameters params;
@@ -620,6 +619,7 @@ void PointCloudCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEther
                         new_p.index_pose = 1;
                         new_p.timestamp = static_cast<double>(cur_timestamp) / 1e9;
                         points.push_back(new_p);
+                        current_points.push_back(new_p);
                     }
                     else
                     {
@@ -629,6 +629,7 @@ void PointCloudCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEther
                         new_p.index_pose = 1;
                         new_p.timestamp = static_cast<double>(cur_timestamp) / 1e9;
                         points.push_back(new_p);
+                        current_points.push_back(new_p);
                     }
                 }
                 if (params.init)
@@ -748,6 +749,10 @@ void SimHandlePc(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
                     new_p.index_pose = 1;
                     points.push_back(new_p);
                 }
+            }
+            while (current_points.size() > params.max_current_points)
+            {
+                current_points.pop_front();
             }
             if (params.init)
             {

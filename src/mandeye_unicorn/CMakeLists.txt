@@ -83,10 +83,14 @@ set(GIZMO
 src/3rd/ImGuizmo/ImGuizmo.cpp
 )
 
-add_executable(mandeye_unicorn src/mandeye_unicorn.cpp ${ImGui_Glut_src} ${FUSION} ${GIZMO})
+add_library(pch src/pch.cpp)
+add_library(ImGui ${ImGui_Glut_src}  ${GIZMO})
+add_library(Fusion ${FUSION})
+
+add_executable(mandeye_unicorn src/mandeye_unicorn.cpp)
 ament_target_dependencies(mandeye_unicorn rclcpp  nav_msgs std_msgs visualization_msgs tf2_ros pcl_ros)
 target_link_libraries(mandeye_unicorn ${OPENGL_LIBRARIES} ${PCL_LIBRARIES} ${GLUT_glut_LIBRARY}
- pthread glut  ${catkin_LIBRARIES} ${LIVOX_LIDAR_SDK_LIBRARY} laszip
+ pthread glut  ${catkin_LIBRARIES} ${LIVOX_LIDAR_SDK_LIBRARY} laszip pch ImGui Fusion
 )
 
 add_executable(base_station_unicorn src/base_station_unicorn.cpp ${ImGui_Glut_src} ${FUSION} ${GIZMO})
