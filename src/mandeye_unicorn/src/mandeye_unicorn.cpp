@@ -865,7 +865,7 @@ int main(int argc, char* argv[])
     sim_pc_sub = g_node->create_subscription<sensor_msgs::msg::PointCloud2>("/sim/pc", 1, SimHandlePc);
     sim_imu_sub = g_node->create_subscription<sensor_msgs::msg::Imu>("/sim/imu", 1, SimHandleImu);
 
-    if (argc != 5)
+    if (argc < 5)
     {
         std::cout << "USAGE #1: " << argv[0] << " config_file_name 0 - non gui folder1 folder2" << std::endl;
         std::cout << "USAGE #2: " << argv[0] << " config_file_name 1 - gui folder1 folder2" << std::endl;
