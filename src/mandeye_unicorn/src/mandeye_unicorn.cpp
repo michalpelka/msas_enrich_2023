@@ -137,7 +137,6 @@ struct DemoOdometryParameters
 
     bool use_imu_for_initial_guess = true;
     bool use_gyro_compenstation = false;
-    float laser_tilt = 15.f / 180.f * M_PI;
 };
 
 DemoOdometryParameters params;
@@ -565,16 +564,13 @@ void project_gui(DemoOdometryParameters& paramters)
 
         ImGui::Checkbox("Use imu for initial guess", &params.use_imu_for_initial_guess);
         ImGui::Checkbox("Use gyro compensation", &params.use_gyro_compenstation);
+
         ImGui::End();
     }
 }
 
 void PointCloudCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEthernetPacket* data, void* client_data)
 {
-    TaitBryanPose tilt_pose;
-    tilt_pose.fi = params.laser_tilt;
-    auto m_tilt = affine_matrix_from_pose_tait_bryan(tilt_pose);
-
     if (data == nullptr)
     {
         return;
@@ -619,7 +615,7 @@ void PointCloudCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEther
                     {
                         Point3Di new_p;
                         new_p.intensity = p.reflectivity;
-                        new_p.point = m_tilt * m_cal * pt;
+                        new_p.point = m_cal * pt;
                         new_p.index_pose = 1;
                         new_p.timestamp = static_cast<double>(cur_timestamp) / 1e9;
                         points.push_back(new_p);
@@ -629,7 +625,7 @@ void PointCloudCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEther
                     {
                         Point3Di new_p;
                         new_p.intensity = p.reflectivity;
-                        new_p.point = m_tilt * pt;
+                        new_p.point = pt;
                         new_p.index_pose = 1;
                         new_p.timestamp = static_cast<double>(cur_timestamp) / 1e9;
                         points.push_back(new_p);
@@ -665,8 +661,6 @@ void PointCloudCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEther
 
 void ImuDataCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEthernetPacket* data, void* client_data)
 {
-
-
     if (data == nullptr)
     {
         return;
@@ -688,7 +682,7 @@ void ImuDataCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEthernet
     t.rotate(d);
     params.euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
 
-    if (fabs(params.euler.angle.roll) > 60 || fabs(params.euler.angle.pitch -params.laser_tilt ) > 60)
+    if (fabs(params.euler.angle.roll) > 60 || fabs(params.euler.angle.pitch) > 60)
     {
         geometry_msgs::msg::Twist twist;
         twist.angular.z = 0;
@@ -707,9 +701,6 @@ void ImuDataCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEthernet
 
 void SimHandlePc(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
 {
-    TaitBryanPose tilt_pose;
-    tilt_pose.fi = params.laser_tilt;
-    auto m_tilt = affine_matrix_from_pose_tait_bryan(tilt_pose);
 
     Eigen::Affine3d m_cal = Eigen::Affine3d::Identity();
     {
@@ -746,7 +737,7 @@ void SimHandlePc(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
                 {
                     Point3Di new_p;
                     new_p.intensity = 1.f;
-                    new_p.point = m_tilt*m_cal * pt;
+                    new_p.point = m_cal * pt;
                     new_p.index_pose = 1;
                     points.push_back(new_p);
                 }
@@ -754,7 +745,7 @@ void SimHandlePc(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
                 {
                     Point3Di new_p;
                     new_p.intensity = 1.f;
-                    new_p.point = m_tilt*pt;
+                    new_p.point = pt;
                     new_p.index_pose = 1;
                     points.push_back(new_p);
                 }
@@ -799,7 +790,7 @@ void SimHandlePc(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
                 {
                     Point3Di new_p;
                     new_p.intensity = 0; // todo(mpelka)
-                    new_p.point = m_tilt*m_cal * pt;
+                    new_p.point = m_cal * pt;
                     new_p.index_pose = 1;
                     current_points.push_back(new_p);
                     // std::cout << m_cal.matrix() << std::endl;
@@ -808,7 +799,7 @@ void SimHandlePc(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
                 {
                     Point3Di new_p;
                     new_p.intensity = 0; // todo(mpelka)
-                    new_p.point = m_tilt*pt;
+                    new_p.point = pt;
                     new_p.index_pose = 1;
                     current_points.push_back(new_p);
                 }
