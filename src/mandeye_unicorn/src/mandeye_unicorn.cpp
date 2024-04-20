@@ -165,6 +165,8 @@ Eigen::Vector3d imu_gyro;
 // node handler
 rclcpp::Node::SharedPtr g_node = nullptr;
 std::mutex g_node_mutex;
+
+const Eigen::AngleAxisf LaserTilt(20.f*M_PI/180.0f, Eigen::Vector3f::UnitY());
 // publishers
 
 std::shared_ptr<rclcpp::Publisher<sensor_msgs::msg::PointCloud2>> pc_current_pub;
@@ -174,6 +176,7 @@ std::shared_ptr<rclcpp::Publisher<nav_msgs::msg::Path>> pub_current_robot_pose;
 std::shared_ptr<rclcpp::Publisher<geometry_msgs::msg::Twist>> pub_vel;
 std::shared_ptr<rclcpp::Publisher<nav_msgs::msg::Path>> pub_current_mission_goal;
 std::shared_ptr<rclcpp::Publisher<std_msgs::msg::String>> pub_debug_message;
+std::shared_ptr<rclcpp::Publisher<sensor_msgs::msg::Imu>> pub_imu_calib;
 
 std::shared_ptr<rclcpp::Subscription<sensor_msgs::msg::PointCloud2>> sim_pc_sub;
 std::shared_ptr<rclcpp::Subscription<sensor_msgs::msg::Imu>> sim_imu_sub;
@@ -682,6 +685,24 @@ void ImuDataCallback(uint32_t handle, const uint8_t dev_type, LivoxLidarEthernet
     t.rotate(d);
     params.euler = FusionQuaternionToEuler(FusionAhrsGetQuaternion(&ahrs));
 
+    const Eigen::Vector3f gyro = { (*p_imu_data).gyro_x, (*p_imu_data).gyro_y, (*p_imu_data).gyro_z };
+    const Eigen::Vector3f acc = { (*p_imu_data).acc_x, (*p_imu_data).acc_y, (*p_imu_data).acc_z };
+    const Eigen::Vector3f gyroC = LaserTilt * gyro;
+    const Eigen::Vector3f accC = LaserTilt * acc;
+    // publish imu
+    sensor_msgs::msg::Imu imu_msg;
+    imu_msg.header.frame_id = "robot";
+    imu_msg.header.stamp = g_node->now();
+    imu_msg.angular_velocity.x = gyroC.x();
+    imu_msg.angular_velocity.y = gyroC.y();
+    imu_msg.angular_velocity.z = gyroC.z();
+    imu_msg.linear_acceleration.x = 9.8f*accC.x();
+    imu_msg.linear_acceleration.y = 9.8f*accC.y();
+    imu_msg.linear_acceleration.z = 9.8f*accC.z();
+    if (pub_imu_calib){
+        pub_imu_calib->publish(imu_msg);
+    }
+
     if (fabs(params.euler.angle.roll) > 60 || fabs(params.euler.angle.pitch) > 60)
     {
         geometry_msgs::msg::Twist twist;
@@ -966,6 +987,8 @@ int main(int argc, char* argv[])
         pub_vel = g_node->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 1);
         pub_current_mission_goal = g_node->create_publisher<nav_msgs::msg::Path>("current_mission_goal", 1);
         pub_debug_message = g_node->create_publisher<std_msgs::msg::String>("debug_message", 1);
+        pub_imu_calib = g_node->create_publisher<sensor_msgs::msg::Imu>("imu_calibrated", 1);
+
 
         //
         auto sub_get_current_pc = g_node->create_subscription<std_msgs::msg::Int32>("get_current_pc", 1, getCurrentPointCloudCallback);
